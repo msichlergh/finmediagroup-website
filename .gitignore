@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# env
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.pem
+*.tsbuildinfo
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# conductor
+.context/
+
+# The award video is 13.8 MB and served from public/. legacy/ holds a second
+# copy purely because it came in the original upload bundle — keep it on disk
+# for reference, out of git history. See the note in legacy/README.md.
+legacy/ft-award-reveal.mp4
