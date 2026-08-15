@@ -1,0 +1,32 @@
+# FinMedia Group — clean URLs
+# Tested for Apache (Hostinger shared hosting). Drop this file in the same
+# directory as your HTML files (public_html/).
+
+RewriteEngine On
+
+# 1. If a request comes in with .html, redirect to the clean URL.
+#    Skips when accessed as a directory or non-file.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# 2. If the request has no extension and a matching .html file exists, serve it.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# 3. Force HTTPS (optional — uncomment if your SSL is set up on Hostinger)
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 4. Cache static assets a little — speeds up repeat visits
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
+
+# 5. Custom error pages (optional — add 404.html if you create one)
+# ErrorDocument 404 /404
