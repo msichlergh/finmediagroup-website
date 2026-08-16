@@ -1732,8 +1732,18 @@ footer {
 
 .depth {
   background-color: var(--depth-bg);
-  background-image: var(--texture), var(--depth);
+  background-image: var(--depth);
   box-shadow: inset 0 1px 0 var(--edge-highlight);
+}
+
+/* Composes with .textured — the pinstripe sits over the depth gradient. */
+.depth.textured {
+  background-image: var(--texture), var(--depth);
+}
+
+/* The hero card keeps its lift off the page as well as the inset lip. */
+.hero-card.depth {
+  box-shadow: inset 0 1px 0 var(--edge-highlight), var(--shadow-md);
 }
 
 footer.depth {

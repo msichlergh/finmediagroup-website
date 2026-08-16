@@ -145,7 +145,7 @@ export default function Page() {
       </section>
       <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta on-dark depth reveal">
+          <div className="cta on-dark depth textured reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">

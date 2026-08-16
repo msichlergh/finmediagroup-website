@@ -5,7 +5,7 @@ export function ArticleCta() {
   return (
     <section className="sec sec-tight">
       <div className="wrap">
-        <div className="cta on-dark depth reveal">
+        <div className="cta on-dark depth textured reveal">
           <span className="eyebrow ctr">Be Relevant. Be Present.</span>
           <h2>Work with the network.</h2>
           <p>

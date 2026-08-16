@@ -24,7 +24,7 @@ export default function Page() {
           the network diagram earns a place lower down the page. */}
       <section className="hero">
         <div className="wrap">
-          <div className="hero-card">
+          <div className="hero-card depth">
             <div className="glow-top" />
             {/* The monogram holds the right of the card now the diagram is out —
                 solid, not a watermark. */}
@@ -385,7 +385,7 @@ export default function Page() {
       </section>
       <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta on-dark depth reveal">
+          <div className="cta on-dark depth textured reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">

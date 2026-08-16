@@ -18,10 +18,8 @@
 .hero-card {
   position: relative;
   overflow: hidden;
-  background: var(--hero-wash);
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
-  box-shadow: var(--shadow-md);
   padding: var(--space-7) var(--space-8) var(--space-6);
 }
 
