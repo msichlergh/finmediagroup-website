@@ -53,7 +53,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec-sm" style={{ paddingTop: "30px" }}>
+      <section className="sec-sm sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -71,7 +71,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Seen on booths & campaigns
               </div>
@@ -89,7 +89,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" id="programs" style={{ paddingTop: "40px" }}>
+      <section className="sec sec-tight" id="programs">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head reveal">
@@ -130,7 +130,7 @@ export default function Page() {
           <div className="services" style={{ marginTop: "20px" }}>
             <div className="svc reveal" style={{ gridColumn: "1/-1", background: "var(--bg-subtle)" }}>
               <h3>
-                More recognition, expanding
+                More recognition, expanding{' '}
                 <span className="tag">
                   Growing
                 </span>
@@ -142,7 +142,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -155,7 +155,7 @@ export default function Page() {
           <div className="services">
             <div className="svc reveal">
               <h3>
-                Transparent Judging
+                Transparent Judging{' '}
                 <span className="tag">
                   Credible
                 </span>
@@ -166,7 +166,7 @@ export default function Page() {
             </div>
             <div className="svc reveal">
               <h3>
-                Brand-Backed Badges
+                Brand-Backed Badges{' '}
                 <span className="tag">
                   Trusted
                 </span>
@@ -177,7 +177,7 @@ export default function Page() {
             </div>
             <div className="svc reveal">
               <h3>
-                Marketing-Ready Assets
+                Marketing-Ready Assets{' '}
                 <span className="tag">
                   Usable
                 </span>
@@ -188,7 +188,7 @@ export default function Page() {
             </div>
             <div className="svc reveal">
               <h3>
-                Ceremony & Coverage
+                Ceremony & Coverage{' '}
                 <span className="tag">
                   Amplified
                 </span>
@@ -200,7 +200,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <span className="eyebrow ctr">

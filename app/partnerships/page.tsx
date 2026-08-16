@@ -39,7 +39,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "70px" }}>
+      <section className="sec">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -100,7 +100,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="split">
@@ -119,7 +119,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Trusted to amplify
               </div>
@@ -137,7 +137,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head ctr reveal">
             <span className="eyebrow ctr">
@@ -193,7 +193,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <span className="eyebrow ctr">

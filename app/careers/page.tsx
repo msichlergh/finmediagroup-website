@@ -39,7 +39,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "70px" }}>
+      <section className="sec">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -57,7 +57,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Remote & Distributed
               </div>
@@ -75,7 +75,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head ctr reveal">
@@ -132,7 +132,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -148,7 +148,7 @@ export default function Page() {
           <div className="services">
             <div className="svc reveal">
               <h3>
-                Media & Content
+                Media & Content{' '}
                 <span className="tag">
                   Creators
                 </span>
@@ -159,7 +159,7 @@ export default function Page() {
             </div>
             <div className="svc reveal">
               <h3>
-                Sales & Partnerships
+                Sales & Partnerships{' '}
                 <span className="tag">
                   Growth
                 </span>
@@ -170,7 +170,7 @@ export default function Page() {
             </div>
             <div className="svc reveal">
               <h3>
-                Operations
+                Operations{' '}
                 <span className="tag">
                   Backbone
                 </span>
@@ -193,7 +193,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -214,7 +214,7 @@ export default function Page() {
               </a>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Always Open
               </div>
@@ -232,7 +232,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />

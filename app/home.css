@@ -22,7 +22,7 @@
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
   box-shadow: var(--shadow-md);
-  padding: var(--space-9) var(--space-8);
+  padding: var(--space-8);
 }
 
 .hero-note {
@@ -117,7 +117,7 @@
 .hub {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 420px;
   /* sits lower than the headline, level with the copy and figures */
   margin: var(--space-8) 0 0;
   justify-self: end;
@@ -281,6 +281,8 @@
 
 .home .sec { padding: var(--space-9) 0 }
 .home .sec-sm { padding: var(--space-8) 0 }
+/* has to out-specify .home .sec above */
+.home .sec-tight { padding-top: var(--space-7) }
 
 @media (max-width: 980px) {
   .hero {

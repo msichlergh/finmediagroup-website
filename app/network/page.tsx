@@ -66,7 +66,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "40px" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -176,7 +176,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head reveal">
@@ -189,11 +189,6 @@ export default function Page() {
           </div>
           <div className="pf-grid">
             <a className="card reveal" href="#">
-              <div className="top">
-                <span className="cat">
-                  Forex News
-                </span>
-              </div>
               <h3>
                 Daily FX Wire
               </h3>
@@ -252,7 +247,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head ctr reveal">
             <span className="eyebrow ctr">
@@ -308,7 +303,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <span className="eyebrow ctr">

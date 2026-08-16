@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Mark } from './Mark'
-import { FOOTER_COLUMNS, SOCIAL_LINKS } from '@/lib/nav'
+import { FOOTER_COLUMNS, LEGAL_LINKS } from '@/lib/nav'
 
 export function SiteFooter() {
   return (
@@ -33,13 +33,13 @@ export function SiteFooter() {
         </div>
         <div className="foot-bottom">
           <span>&copy; {new Date().getFullYear()} FinMedia Group. All rights reserved.</span>
-          <div className="socials">
-            {SOCIAL_LINKS.map((s) => (
-              <a key={s.label} href={s.href}>
-                {s.label}
-              </a>
+          <nav className="legal" aria-label="Legal">
+            {LEGAL_LINKS.map((l) => (
+              <Link key={l.href} href={l.href}>
+                {l.label}
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </div>
     </footer>

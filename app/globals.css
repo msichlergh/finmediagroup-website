@@ -25,7 +25,8 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--texture);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -235,10 +236,11 @@ nav.links a.active {
   flex-shrink: 0;
 }
 
-/* A dark island paints its own ground, so the page motif and the ambient
-   glow behind it have to flip too — both already key off tokens. */
+/* A dark island paints its own ground, so the page motif, the ambient glow
+   and the texture behind it all flip too — each keys off tokens. */
 .on-dark {
   border-color: var(--border);
+  background-image: var(--texture);
 }
 
 /* ---------- buttons ---------- */
@@ -395,6 +397,13 @@ section {
   padding: var(--space-9) 0;
 }
 
+/* Sections that used to carry an inline padding-top from the legacy markup.
+   Zero meant the eyebrow badge sat flush against the section edge with no
+   room to breathe; this keeps consecutive sections tight without crowding. */
+.sec-tight {
+  padding-top: var(--space-7);
+}
+
 .sec-head {
   max-width: 780px;
 }
@@ -467,7 +476,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-7);
 }
 
 .pillar {
@@ -1280,8 +1289,6 @@ section {
   width: 300px;
   color: var(--text);
   opacity: var(--watermark-opacity);
-  transition: transform .2s linear;
-  will-change: transform;
 }
 
 .split .panel-visual .vlabel,
@@ -1448,7 +1455,7 @@ section {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: var(--space-9) 0 var(--space-7);
+  padding: var(--space-8) 0 var(--space-5);
   position: relative;
   z-index: 1;
   background: var(--bg-subtle);
@@ -1461,6 +1468,21 @@ footer {
   gap: var(--space-7);
 }
 
+/* .brand is sized for the nav pill; the footer lockup has room to breathe
+   and should carry more weight as the sign-off. */
+.foot-brand .brand .mark {
+  width: 38px;
+  height: 38px;
+}
+
+.foot-brand .brand .wordmark b {
+  font-size: 23px;
+}
+
+.foot-brand .brand .wordmark span {
+  font-size: 10px;
+}
+
 .foot-brand p {
   color: var(--text-muted);
   font-size: var(--text-sm);
@@ -1468,17 +1490,20 @@ footer {
   max-width: 36ch;
 }
 
+/* The heading is a label; the links are what people came for. It was both
+   dimmer *and* smaller than the links under it, which read backwards — it now
+   leads on size and lets the links lead on contrast. */
 .foot-col h4 {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: var(--text-xs);
-  color: var(--text-faint);
+  font-weight: 500;
+  font-size: var(--text-body);
+  color: var(--text-muted);
   margin-bottom: var(--space-4);
 }
 
 .foot-col a {
   display: block;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: var(--text-sm);
   padding: var(--space-1) 0;
   transition: color .2s ease;
@@ -1492,7 +1517,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   padding-top: var(--space-5);
   border-top: 1px solid var(--border);
   color: var(--text-faint);
@@ -1501,12 +1526,17 @@ footer {
   gap: var(--space-4);
 }
 
-.foot-bottom .socials {
+.foot-bottom .legal {
   display: flex;
   gap: var(--space-5);
+  flex-wrap: wrap;
 }
 
-.foot-bottom .socials a:hover {
+.foot-bottom .legal a {
+  transition: color .2s ease;
+}
+
+.foot-bottom .legal a:hover {
   color: var(--text);
 }
 

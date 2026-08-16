@@ -78,19 +78,19 @@ export default function Page() {
                 <li>
                   <b>
                     Owned authority
-                  </b>
+                  </b>{' '}
                   — branded awards, coverage, and deep-dive reviews that set the industry standard.
                 </li>
                 <li>
                   <b>
                     Transaction-focused placements
-                  </b>
+                  </b>{' '}
                   — premium web and email placements designed to move users through the funnel.
                 </li>
                 <li>
                   <b>
                     Lead-generation ecosystems
-                  </b>
+                  </b>{' '}
                   — campaigns and communities powered by proprietary first-party data.
                 </li>
               </ul>
@@ -121,7 +121,7 @@ export default function Page() {
           </article>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <span className="eyebrow ctr">

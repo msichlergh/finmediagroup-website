@@ -153,7 +153,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -168,13 +168,13 @@ export default function Page() {
               <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 <b style={{ fontWeight: "600" }}>
                   Be Relevant.
-                </b>
+                </b>{' '}
                 Independent reviews, an expert team, and awards the industry respects — the credibility that makes audiences listen and firms want to be associated with us.
               </p>
               <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 <b style={{ fontWeight: "600" }}>
                   Be Present.
-                </b>
+                </b>{' '}
                 A growing network of brands, leading YouTube channels, newsletters, and a seat at the industry&apos;s biggest events — so you show up everywhere your audience already looks.
               </p>
               <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
@@ -182,7 +182,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 The brand promise
               </div>
@@ -200,7 +200,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head ctr reveal">
@@ -260,7 +260,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -272,11 +272,6 @@ export default function Page() {
           </div>
           <div className="pf-grid">
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Prop Trading
-                </span>
-              </div>
               <h3>
                 Funded Trading
               </h3>
@@ -302,11 +297,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Reviews
-                </span>
-              </div>
               <h3>
                 My Trading Reviews
               </h3>
@@ -329,11 +319,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Forex News
-                </span>
-              </div>
               <h3>
                 Daily FX Wire
               </h3>
@@ -356,11 +341,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  PR & Authority
-                </span>
-              </div>
               <h3>
                 FinPR
               </h3>
@@ -401,7 +381,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
