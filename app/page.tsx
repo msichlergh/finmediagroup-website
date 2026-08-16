@@ -8,11 +8,11 @@ import { PullQuote } from '@/components/PullQuote'
 
 export const metadata: Metadata = {
   title: {absolute: "FinMedia Group — Be Relevant. Be Present."},
-  description: "FinMedia Group launches, grows, and amplifies the financial media brands the industry trusts — four operative properties and growing, leading YouTube channels, the awards firms display, and the events where the industry meets.",
+  description: "FinMedia Group owns and operates the media brands the finance and trading industry relies on: independent reviews, industry awards, and industry events.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "FinMedia Group — Be Relevant. Be Present.",
-    description: "FinMedia Group launches, grows, and amplifies the financial media brands the industry trusts — four operative properties and growing, leading YouTube channels, the awards firms display, and the events where the industry meets.",
+    description: "FinMedia Group owns and operates the media brands the finance and trading industry relies on: independent reviews, industry awards, and industry events.",
     url: "/",
   },
 }
@@ -98,7 +98,7 @@ export default function Page() {
                 01 — Media Network
               </div>
               <h3>
-                Four brands, building more
+                The platforms we own
               </h3>
               <p>
                 Independent reviews, news, and PR across prop trading, brokerage, and forex — launched and grown in-house, with new media joining the network.
