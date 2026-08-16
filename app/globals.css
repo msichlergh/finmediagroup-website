@@ -26,7 +26,6 @@ html {
 
 body {
   background-color: var(--bg);
-  background-image: var(--texture);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -236,10 +235,16 @@ nav.links a.active {
   flex-shrink: 0;
 }
 
-/* A dark island paints its own ground, so the page motif, the ambient glow
-   and the texture behind it all flip too — each keys off tokens. */
+/* A dark island paints its own ground, so the page motif and the ambient
+   glow behind it flip too — both key off tokens. */
 .on-dark {
   border-color: var(--border);
+}
+
+/* Diagonal pinstripe. Opt-in per section, like .on-dark — on the whole page
+   ground it is wallpaper; on a band or two it separates them from the flow.
+   Works on either ground: --texture flips with the surrounding tokens. */
+.textured {
   background-image: var(--texture);
 }
 
@@ -1521,7 +1526,8 @@ footer {
   padding-top: var(--space-5);
   border-top: 1px solid var(--border);
   color: var(--text-faint);
-  font-size: var(--text-sm);
+  /* ~15% down from --text-sm; this row is a sign-off, not content */
+  font-size: var(--text-xs);
   flex-wrap: wrap;
   gap: var(--space-4);
 }
