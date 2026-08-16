@@ -20,7 +20,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
-  padding: var(--space-7) var(--space-8) var(--space-6);
+  padding: var(--space-6) var(--space-8);
 }
 
 .hero-note {
@@ -35,9 +35,9 @@
 .hero-mark {
   position: absolute;
   right: var(--space-8);
-  /* sits lower than the eyebrow so it centres against the copy block rather
-     than hanging from the top edge of the card */
-  top: var(--space-9);
+  /* Positioned from the card's top edge, so it tracks the card padding —
+     otherwise trimming the padding reopens the gap to the headline. */
+  top: var(--space-7);
   width: clamp(170px, 21vw, 290px);
   color: var(--text);
   pointer-events: none;

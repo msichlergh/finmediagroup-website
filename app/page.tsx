@@ -38,10 +38,9 @@ export default function Page() {
             </h1>
 
             <p className="lead">
-              FinMedia Group launches, grows, and amplifies the financial media brands the industry
-              trusts. Four core properties today and more on the way — leading YouTube channels, the
-              awards firms display, and the events where the industry meets, built by a team
-              recognised across the space.
+              FinMedia Group owns and operates the media brands the finance and trading industry
+              relies on — independent reviews, industry awards, and the events where the market
+              meets.
             </p>
 
             <div className="cta-row">
