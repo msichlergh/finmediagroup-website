@@ -1363,7 +1363,7 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
   box-shadow: var(--shadow-md);
-  padding: var(--space-9) var(--space-8);
+  padding: var(--space-8);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1467,15 +1467,6 @@ footer {
   margin-top: var(--space-9);
 }
 
-/* The footer carries the depth treatment: darker ground, light catching the
-   top edge, falling away to the bottom, texture laid over the top. The inset
-   hairline is what sells it — it reads as a lit edge rather than a border. */
-footer.on-dark {
-  background-color: var(--depth-bg);
-  background-image: var(--texture), var(--depth);
-  box-shadow: inset 0 1px 0 var(--edge-highlight);
-  border-top-color: transparent;
-}
 
 .foot-top {
   display: grid;
@@ -1512,7 +1503,7 @@ footer.on-dark {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: var(--text-body);
-  color: var(--text-muted);
+  color: var(--text-label);
   margin-bottom: var(--space-4);
 }
 
@@ -1618,6 +1609,20 @@ footer.on-dark {
   .wrap {
     padding: 0 var(--space-5);
   }
+  /* .wrap drops to --space-5 of padding here, so the bar has to follow or it
+     sits narrower than the content it is supposed to line up with. */
+  header {
+    top: var(--space-2);
+  }
+  header .nav {
+    width: calc(100% - var(--space-5) * 2);
+    padding-left: var(--space-3);
+  }
+  .mobile-menu {
+    top: calc(var(--header-h) - var(--space-2));
+    left: var(--space-5);
+    right: var(--space-5);
+  }
   .page-hero {
     padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-7);
   }
@@ -1701,4 +1706,29 @@ footer.on-dark {
 
 .on-dark .brand-logo[data-ink='dark'] {
   filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   .depth — the premium band treatment
+
+   Darker, neutral ground with light catching the top edge and falling
+   away toward the bottom, texture laid over it. The inset hairline is
+   what sells it: it reads as a lit lip rather than a border.
+
+   Defined here, after the component rules, so it overrides whatever
+   background the component sets for itself.
+   ============================================================ */
+
+.depth {
+  background-color: var(--depth-bg);
+  background-image: var(--texture), var(--depth);
+  box-shadow: inset 0 1px 0 var(--edge-highlight);
+}
+
+footer.depth {
+  border-top-color: transparent;
+}
+
+.cta.depth {
+  border-color: transparent;
 }

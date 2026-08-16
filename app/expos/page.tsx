@@ -225,7 +225,7 @@ export default function Page() {
       </section>
       <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta on-dark textured reveal">
+          <div className="cta on-dark depth reveal">
             <span className="eyebrow ctr">
               Events
             </span>

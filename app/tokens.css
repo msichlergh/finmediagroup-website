@@ -27,6 +27,7 @@
   --n-50:  #edeef1;
   --n-100: #e4e6ea;
   --n-200: #c9cdd2;
+  --n-300: #aeb1b8;
   --n-400: #94979e;
   --n-450: #64676e; /* lightest step that still clears 4.5:1 on --bg (5.15:1) */
   --n-500: #61646b;
@@ -105,6 +106,8 @@
      (dividers, watermarks); anything carrying words uses this darker step. */
   --text-faint: var(--n-450);
   --text-inverse: var(--n-0);
+  /* Section labels — quieter than body text, but still a heading. */
+  --text-label: var(--n-500);
 
   --border: var(--n-100);
   --border-strong: var(--n-200);
@@ -182,6 +185,7 @@
   --text-muted: var(--n-400);
   --text-faint: var(--n-200);
   --text-inverse: var(--n-950);
+  --text-label: var(--n-300);
 
   --border: rgba(255, 255, 255, 0.09);
   --border-strong: rgba(255, 255, 255, 0.18);
