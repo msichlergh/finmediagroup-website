@@ -227,6 +227,7 @@ nav.links a::after {
   bottom: 6px;
   height: 1px;
   background: currentColor;
+  opacity: .32;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform .25s ease-out;
@@ -900,7 +901,7 @@ section {
 }
 
 .news-card h3 {
-  font-size: var(--text-h3);
+  font-size: var(--text-h4);
   margin-top: var(--space-3);
 }
 
