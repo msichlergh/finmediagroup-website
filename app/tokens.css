@@ -212,12 +212,14 @@
   --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
   --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
 
-  /* A step darker than --bg so the band reads as beneath the page, lit from
-     the top edge and falling away toward the bottom. */
-  --depth-bg: #0c0c11;
-  --depth: radial-gradient(120% 85% at 50% 0%, rgba(255, 255, 255, 0.055), transparent 58%),
-    linear-gradient(180deg, #17171f 0%, #0b0b0f 100%);
-  --edge-highlight: rgba(255, 255, 255, 0.07);
+  /* The deepest band on the site, and the only place that goes to true black.
+     The neutral ramp carries a slight blue-violet cast — right for surfaces
+     sitting near the content, wrong here, where it reads as grey rather than
+     black. So these values are deliberately neutral and off-ramp. */
+  --depth-bg: #040404;
+  --depth: radial-gradient(120% 85% at 50% 0%, rgba(255, 255, 255, 0.04), transparent 58%),
+    linear-gradient(180deg, #0e0e0e 0%, #000000 100%);
+  --edge-highlight: rgba(255, 255, 255, 0.06);
 
   --motif-stroke: rgba(255, 255, 255, 0.08);
   --motif-opacity: 0.85;
