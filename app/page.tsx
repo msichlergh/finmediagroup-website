@@ -41,7 +41,7 @@ export default function Page() {
               </p>
               <div className="cta-row">
                 <Link className="btn btn-primary" href="/network">
-                  Explore the Network →
+                  Explore the Network
                 </Link>
                 <Link className="btn btn-ghost" href="/contact">
                   Work With Us
@@ -80,7 +80,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <p style={{ textAlign: "center", color: "var(--faint)", fontSize: "13px", marginTop: "18px" }}>
+          <p style={{ textAlign: "center", color: "var(--text-faint)", fontSize: "13px", marginTop: "18px" }}>
             Quality over volume — a targeted, decision-stage audience of traders, investors, and industry professionals.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function Page() {
                 Independent reviews, news, and PR across prop trading, brokerage, and forex — launched and grown in-house, with new media joining the network.
               </p>
               <span className="go">
-                See the network →
+                See the network
               </span>
             </Link>
             <Link className="cap reveal" href="/awards">
@@ -125,7 +125,7 @@ export default function Page() {
                 Industry awards and certifications credible enough that winners feature them on their booths, sites, and campaigns. Recognition that&apos;s earned, not bought.
               </p>
               <span className="go">
-                Explore awards →
+                Explore awards
               </span>
             </Link>
             <Link className="cap reveal" href="/expos">
@@ -139,7 +139,7 @@ export default function Page() {
                 We stage the expos, ceremonies, and gatherings that bring traders, firms, and partners face to face — the in-person layer of the network.
               </p>
               <span className="go">
-                See events →
+                See events
               </span>
             </Link>
             <Link className="cap reveal" href="/ventures">
@@ -153,7 +153,7 @@ export default function Page() {
                 Go-to-market and growth advisory for finance companies — and venture building, where we launch and back new businesses in the space.
               </p>
               <span className="go">
-                Advisory & ventures →
+                Advisory & ventures
               </span>
             </Link>
           </div>
@@ -171,19 +171,19 @@ export default function Page() {
                 <br />
                 working together.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "20px" }}>
-                <b style={{ color: "#fff", fontWeight: "600" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
+                <b style={{ fontWeight: "600" }}>
                   Be Relevant.
                 </b>
                 Independent reviews, an expert team, and awards the industry respects — the credibility that makes audiences listen and firms want to be associated with us.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
-                <b style={{ color: "#fff", fontWeight: "600" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
+                <b style={{ fontWeight: "600" }}>
                   Be Present.
                 </b>
                 A growing network of brands, leading YouTube channels, newsletters, and a seat at the industry&apos;s biggest events — so you show up everywhere your audience already looks.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 Most can offer one. We&apos;re built to deliver both — and that&apos;s what compounds.
               </p>
             </div>
@@ -223,10 +223,9 @@ export default function Page() {
           <div className="pillars">
             <div className="pillar reveal">
               <span className="num">
-                ↗
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Displayed by leading firms
@@ -237,10 +236,9 @@ export default function Page() {
             </div>
             <div className="pillar reveal">
               <span className="num">
-                ↗
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Named as partners
@@ -251,10 +249,9 @@ export default function Page() {
             </div>
             <div className="pillar reveal">
               <span className="num">
-                ↗
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Official media partners
@@ -264,7 +261,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <p style={{ textAlign: "center", color: "var(--faint)", fontSize: "13px", marginTop: "24px" }}>
+          <p style={{ textAlign: "center", color: "var(--text-faint)", fontSize: "13px", marginTop: "24px" }}>
             Specific partners and named placements available on request.
           </p>
         </div>
@@ -284,9 +281,6 @@ export default function Page() {
               <div className="top">
                 <span className="cat">
                   Prop Trading
-                </span>
-                <span className="dot">
-                  ↗
                 </span>
               </div>
               <h3>
@@ -318,9 +312,6 @@ export default function Page() {
                 <span className="cat">
                   Reviews
                 </span>
-                <span className="dot">
-                  ↗
-                </span>
               </div>
               <h3>
                 My Trading Reviews
@@ -347,9 +338,6 @@ export default function Page() {
               <div className="top">
                 <span className="cat">
                   Forex News
-                </span>
-                <span className="dot">
-                  ↗
                 </span>
               </div>
               <h3>
@@ -378,9 +366,6 @@ export default function Page() {
                 <span className="cat">
                   PR & Authority
                 </span>
-                <span className="dot">
-                  ↗
-                </span>
               </div>
               <h3>
                 FinPR
@@ -403,7 +388,7 @@ export default function Page() {
                 </span>
               </div>
             </Link>
-            <div className="card reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--steel)" }}>
+            <div className="card reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--bg-subtle)" }}>
               <div className="cat" style={{ marginBottom: "14px" }}>
                 Always Building
               </div>
@@ -415,8 +400,8 @@ export default function Page() {
               <p style={{ flex: "none" }}>
                 We launch and acquire properties where independent media can genuinely serve an audience.
               </p>
-              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--line-strong)", paddingBottom: "3px" }}>
-                Pitch a partnership →
+              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
+                Pitch a partnership
               </Link>
             </div>
           </div>
@@ -425,7 +410,7 @@ export default function Page() {
       <section className="sec" style={{ paddingTop: "0" }}>
         <div className="wrap">
           <div className="cta reveal">
-            <div className="glow-top" style={{ borderRadius: "var(--r-2)" }} />
+            <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">
               Let&apos;s Work Together
@@ -438,7 +423,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Get in Touch →
+                Get in Touch
               </Link>
               <Link className="btn btn-ghost" href="/network">
                 View the Network

@@ -32,7 +32,7 @@ export default function Page() {
               </p>
               <div className="cta-row">
                 <Link className="btn btn-primary" href="/contact">
-                  Enquire About Awards →
+                  Enquire About Awards
                 </Link>
                 <a className="btn btn-ghost" href="#programs">
                   View Programs
@@ -63,10 +63,10 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(26px,3.4vw,40px)", marginTop: "18px" }}>
                 Displayed where it counts.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "18px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 When one of the biggest prop firms in the world dedicates its expo booth to the awards it has won from our brands, that recognition is doing real work — signalling trust to every trader who walks past. Our awards are built to carry exactly that weight.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 Winners feature our badges on booths, homepages, and campaigns because the recognition converts — and because it comes from brands the industry already trusts.
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function Page() {
             </div>
           </div>
           <div className="services" style={{ marginTop: "20px" }}>
-            <div className="svc reveal" style={{ gridColumn: "1/-1", background: "var(--steel)" }}>
+            <div className="svc reveal" style={{ gridColumn: "1/-1", background: "var(--bg-subtle)" }}>
               <h3>
                 More recognition, expanding
                 <span className="tag">
@@ -214,7 +214,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Enquire About Awards →
+                Enquire About Awards
               </Link>
               <Link className="btn btn-ghost" href="/expos">
                 See Our Events

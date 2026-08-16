@@ -135,7 +135,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Get in Touch →
+                Get in Touch
               </Link>
               <Link className="btn btn-ghost" href="/news">
                 Back to News

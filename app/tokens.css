@@ -1,0 +1,238 @@
+/* ============================================================
+   FinMedia Group — design tokens
+
+   Two layers, deliberately:
+
+   1. THE RAMP (--n-*) — raw values. Neutral, slightly cool. Never
+      reference these outside this file; they carry no meaning.
+   2. SEMANTIC TOKENS — what a thing *is* (--surface, --text-muted),
+      not what colour it happens to be. These are the only ones the
+      stylesheet should use, and they are what makes theming possible.
+
+   The old stylesheet named its tokens after their values (--white:#fff,
+   --panel:#101012). That is why it could not be themed: light mode would
+   have needed --white to be black. Hence this rewrite.
+
+   Palette derived from the Sevora reference. Light is the default; dark
+   is the same ramp inverted on #121218 rather than pure black, which is
+   softer and keeps FinMedia's identity as a real theme, not an inversion
+   artefact.
+   ============================================================ */
+
+:root {
+  /* ---- neutral ramp ---- */
+  --n-0:   #ffffff;
+  --n-25:  #f7f7f8;
+  --n-50:  #edeef1;
+  --n-100: #e4e6ea;
+  --n-200: #c9cdd2;
+  --n-400: #94979e;
+  --n-450: #64676e; /* lightest step that still clears 4.5:1 on --bg (5.15:1) */
+  --n-500: #61646b;
+  --n-700: #44454c;
+  --n-850: #1a1a21;
+  --n-900: #24242a;
+  --n-950: #121218;
+
+  /* ---- radii ---- */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-2xl:  32px;
+  --r-pill: 999px;
+
+  /* ---- spacing rhythm ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---- type ---- */
+  --font-display: var(--font-lora), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-instrument-sans), system-ui, -apple-system, sans-serif;
+
+  /* Sevora's scale: display is Lora with -0.02em tracking, UI is
+     Instrument Sans at the same tracking. Sizes fluid between the
+     mobile and desktop values. */
+  --text-display: clamp(40px, 6vw, 72px);
+  --text-h2: clamp(28px, 3.6vw, 36px);
+  --text-h3: clamp(20px, 2vw, 24px);
+  --text-lead: clamp(16px, 1.4vw, 18px);
+  --text-body: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+  --text-2xs: 11px;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.16em;
+  --tracking-wider: 0.28em;
+
+  --leading-display: 1.0;
+  --leading-heading: 1.33;
+  --leading-body: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* ---- layout ---- */
+  --maxw: 1240px;
+  --header-h: 78px;
+}
+
+/* ============================================================
+   LIGHT — the default
+   ============================================================ */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: var(--n-25);
+  --bg-subtle: var(--n-50);
+  --surface: var(--n-0);
+  --surface-2: var(--n-25);
+  --surface-inverse: var(--n-950);
+
+  --text: var(--n-950);
+  --text-secondary: var(--n-700);
+  --text-muted: var(--n-500);
+  /* --n-400 is only 2.52:1 on --bg, so it is reserved for non-text decoration
+     (dividers, watermarks); anything carrying words uses this darker step. */
+  --text-faint: var(--n-450);
+  --text-inverse: var(--n-0);
+
+  --border: var(--n-100);
+  --border-strong: var(--n-200);
+
+  /* primary action: dark pill on light ground */
+  --accent: var(--n-950);
+  --accent-hover: var(--n-900);
+  --accent-fg: var(--n-0);
+
+  /* translucent tints for hovers and sheens */
+  --tint-1: rgba(18, 18, 24, 0.03);
+  --tint-2: rgba(18, 18, 24, 0.06);
+  --overlay: rgba(255, 255, 255, 0.72);
+
+  /* Light needs real shadows to separate surfaces; dark does not. */
+  --shadow-sm: 0 1px 2px rgba(18, 18, 24, 0.05);
+  --shadow-md: 0 4px 16px rgba(18, 18, 24, 0.06), 0 1px 2px rgba(18, 18, 24, 0.04);
+  --shadow-lg: 0 12px 40px rgba(18, 18, 24, 0.10), 0 2px 8px rgba(18, 18, 24, 0.04);
+  --shadow-pill: 0 2px 12px rgba(18, 18, 24, 0.08), 0 0 0 1px rgba(18, 18, 24, 0.04);
+
+  /* ambient light behind the hero */
+  --glow: radial-gradient(90% 60% at 50% -10%, rgba(18, 18, 24, 0.05), transparent 60%);
+  --hero-wash: linear-gradient(160deg, var(--n-50), var(--n-0) 55%, var(--n-25));
+
+  /* the layered rounded-rect corner motif */
+  --motif-stroke: rgba(18, 18, 24, 0.07);
+  --motif-opacity: 1;
+
+  /* watermark monograms */
+  --watermark-opacity: 0.045;
+
+  /* third-party brand logos sit on a light ground: show them as-is */
+  --logo-filter: none;
+  --logo-blend: normal;
+}
+
+/* ============================================================
+   DARK — the same ramp inverted
+   ============================================================ */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: var(--n-950);
+  --bg-subtle: #0e0e13;
+  --surface: var(--n-850);
+  --surface-2: var(--n-900);
+  --surface-inverse: var(--n-0);
+
+  --text: var(--n-25);
+  --text-secondary: var(--n-200);
+  --text-muted: var(--n-400);
+  --text-faint: var(--n-200);
+  --text-inverse: var(--n-950);
+
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  /* primary action flips: light pill on dark ground */
+  --accent: var(--n-0);
+  --accent-hover: rgba(255, 255, 255, 0.88);
+  --accent-fg: var(--n-950);
+
+  --tint-1: rgba(255, 255, 255, 0.04);
+  --tint-2: rgba(255, 255, 255, 0.07);
+  --overlay: rgba(18, 18, 24, 0.72);
+
+  /* Shadows read as murk on a dark ground — lean on borders and a
+     faint lift instead. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+  --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
+  --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
+
+  --motif-stroke: rgba(255, 255, 255, 0.08);
+  --motif-opacity: 0.85;
+
+  --watermark-opacity: 0.06;
+
+  /* knocked-out logos need inverting to read on a dark ground.
+     Replaced with proper per-brand assets — see components/BrandLogo.tsx. */
+  --logo-filter: brightness(0) invert(1);
+  --logo-blend: normal;
+}
+
+/* Honour the OS preference until the visitor picks a theme explicitly.
+   ThemeScript writes data-theme on <html> before first paint, so this
+   only applies on the very first render. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
+    --bg: var(--n-950);
+    --bg-subtle: #0e0e13;
+    --surface: var(--n-850);
+    --surface-2: var(--n-900);
+    --surface-inverse: var(--n-0);
+
+    --text: var(--n-25);
+    --text-secondary: var(--n-200);
+    --text-muted: var(--n-400);
+    --text-faint: var(--n-200);
+    --text-inverse: var(--n-950);
+
+    --border: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(255, 255, 255, 0.18);
+
+    --accent: var(--n-0);
+    --accent-hover: rgba(255, 255, 255, 0.88);
+    --accent-fg: var(--n-950);
+
+    --tint-1: rgba(255, 255, 255, 0.04);
+    --tint-2: rgba(255, 255, 255, 0.07);
+    --overlay: rgba(18, 18, 24, 0.72);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+    --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+    --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
+    --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
+
+    --motif-stroke: rgba(255, 255, 255, 0.08);
+    --motif-opacity: 0.85;
+    --watermark-opacity: 0.06;
+    --logo-filter: brightness(0) invert(1);
+  }
+}

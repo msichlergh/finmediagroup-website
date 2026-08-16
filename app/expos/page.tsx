@@ -31,7 +31,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/contact">
-              Partner On An Event →
+              Partner On An Event
             </Link>
             <a className="btn btn-ghost" href="#formats">
               Event Formats
@@ -94,7 +94,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Expos & Trade Shows
@@ -108,7 +108,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Award Ceremonies
@@ -122,7 +122,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Booths & Sponsorships
@@ -237,7 +237,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Partner On An Event →
+                Partner On An Event
               </Link>
               <Link className="btn btn-ghost" href="/ventures">
                 Advisory & Ventures

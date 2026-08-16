@@ -31,7 +31,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href="mailto:careers@finmediagroup.com">
-              Introduce Yourself →
+              Introduce Yourself
             </a>
             <Link className="btn btn-ghost" href="/about">
               About FinMedia
@@ -49,10 +49,10 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(28px,3.6vw,46px)", marginTop: "18px" }}>
                 Operators, not an agency.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "20px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 Most media jobs mean grinding out work for someone else&apos;s brand. Here, you build ours — platforms with real audiences, real partnerships, and your name on the result. We ship fast, we own what we make, and we grow it.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 You&apos;ll work across a network of established brands and the people who built them — gaining exposure to the trading and finance industry that&apos;s hard to get anywhere else.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Ownership
@@ -106,7 +106,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Pace
@@ -120,7 +120,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Remote-first
@@ -203,14 +203,14 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(26px,3.4vw,40px)", marginTop: "18px" }}>
                 Tell us what you&apos;d build.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "18px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 No formal opening required. Send us a short note on what you do, a few examples of your work, and where you think you&apos;d add value across the network. If there&apos;s a fit, we&apos;ll be in touch.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 We read every introduction — the more specific about how you&apos;d help, the better.
               </p>
               <a className="btn btn-primary" style={{ marginTop: "24px" }} href="mailto:careers@finmediagroup.com">
-                Email careers@finmediagroup.com →
+                Email careers@finmediagroup.com
               </a>
             </div>
             <div className="panel-visual reveal">
@@ -235,7 +235,7 @@ export default function Page() {
       <section className="sec" style={{ paddingTop: "0" }}>
         <div className="wrap">
           <div className="cta reveal">
-            <div className="glow-top" style={{ borderRadius: "var(--r-2)" }} />
+            <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">
               Join Us
@@ -248,7 +248,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <a className="btn btn-primary" href="mailto:careers@finmediagroup.com">
-                Introduce Yourself →
+                Introduce Yourself
               </a>
               <Link className="btn btn-ghost" href="/network">
                 See the Network

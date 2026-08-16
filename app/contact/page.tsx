@@ -35,7 +35,7 @@ export default function Page() {
           <div className="split" style={{ alignItems: "start" }}>
             <div className="reveal">
               <ContactForm />
-              <p style={{ color: "var(--faint)", fontSize: "12.5px", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-faint)", fontSize: "12.5px", marginTop: "14px" }}>
                 This form is a front-end demo. Wire it to your email or CRM to go live.
               </p>
             </div>
@@ -66,13 +66,13 @@ export default function Page() {
                 </p>
               </div>
               <div style={{ display: "flex", gap: "18px", marginTop: "4px" }}>
-                <a href="#" style={{ color: "var(--muted)", fontSize: "13px", fontWeight: "600" }}>
+                <a href="#" style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "600" }}>
                   YouTube
                 </a>
-                <a href="#" style={{ color: "var(--muted)", fontSize: "13px", fontWeight: "600" }}>
+                <a href="#" style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "600" }}>
                   X
                 </a>
-                <a href="#" style={{ color: "var(--muted)", fontSize: "13px", fontWeight: "600" }}>
+                <a href="#" style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "600" }}>
                   LinkedIn
                 </a>
               </div>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Mark } from './Mark'
+import { ThemeToggle } from './ThemeToggle'
 import { NAV_LINKS } from '@/lib/nav'
 
 export function SiteHeader() {
@@ -29,9 +30,9 @@ export function SiteHeader() {
   return (
     <>
       <header id="hdr" className={scrolled ? 'scrolled' : undefined}>
-        <div className="wrap nav">
+        <div className="nav">
           <Link className="brand" href="/">
-            <Mark className="mark" style={{ color: '#fff' }} />
+            <Mark className="mark" />
             <span className="wordmark">
               <b>FinMedia</b>
               <span>Group</span>
@@ -49,9 +50,12 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <Link className="btn btn-primary" href="/contact">
-            Get in Touch
-          </Link>
+          <div className="nav-actions">
+            <ThemeToggle />
+            <Link className="btn btn-primary" href="/contact">
+              Get in Touch
+            </Link>
+          </div>
           <button
             type="button"
             className="nav-burger"

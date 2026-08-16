@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
+import { BRAND_LOGOS, BrandLogo, type BrandKey } from './BrandLogo'
 
 /**
  * Homepage hub-and-spoke diagram. The geometry that buildHub() computed at
@@ -16,50 +17,16 @@ const START_ANGLE = -90
 const HUB_GAP = 58 // edge starts this far out from the centre node
 const SPOKE_GAP = 38 // ...and stops this far short of the spoke
 
-type Spoke = {
-  label: string
-  href?: string
-  img?: { src: string; alt: string; style: CSSProperties }
-  soon?: boolean
-}
+type Spoke =
+  | { brand: BrandKey; soon?: false }
+  | { label: string; soon: true }
 
+/** Logo artwork and per-theme handling live in components/BrandLogo.tsx. */
 const SPOKES: Spoke[] = [
-  {
-    label: 'Funded Trading',
-    href: 'https://fundedtrading.com',
-    img: {
-      src: 'https://fundedtrading.com/wp-content/uploads/2025/10/Layer_1.svg',
-      alt: 'Funded Trading',
-      style: { width: '58px', height: 'auto', objectFit: 'contain' },
-    },
-  },
-  {
-    label: 'My Trading Reviews',
-    href: 'https://www.mytradingreviews.com',
-    img: {
-      src: 'https://www.mytradingreviews.com/favicon.ico?favicon.0c6k0klp82iep.ico',
-      alt: 'My Trading Reviews',
-      style: { width: '64px', height: 'auto', objectFit: 'contain', mixBlendMode: 'screen' },
-    },
-  },
-  {
-    label: 'FinPR',
-    href: 'https://finpr.com',
-    img: {
-      src: 'https://finpr.com/wp-content/uploads/2024/10/cropped-FinPR-Branding-Update-02.webp',
-      alt: 'FinPR',
-      style: { width: '58px', height: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' },
-    },
-  },
-  {
-    label: 'Daily FX Wire',
-    href: 'https://dailyfxwire.com',
-    img: {
-      src: 'https://dailyfxwire.com/wp-content/uploads/2024/06/DailyFXWire-Logo-FIX-08.png',
-      alt: 'Daily FX Wire',
-      style: { width: '58px', height: 'auto', objectFit: 'contain' },
-    },
-  },
+  { brand: 'funded-trading' },
+  { brand: 'my-trading-reviews' },
+  { brand: 'finpr' },
+  { brand: 'daily-fx-wire' },
   { label: 'More coming', soon: true },
 ]
 
@@ -170,7 +137,7 @@ export function HubGraphic() {
 
       <div className="node center" style={{ left: '50%', top: '50%' }}>
         <div className="ring">
-          <svg style={{ color: '#fff' }}>
+          <svg>
             <use href="#fmg-mark" />
           </svg>
         </div>
@@ -184,20 +151,6 @@ export function HubGraphic() {
           top: g.top,
           animationDelay: g.nodeDelay,
         }
-        const inner = (
-          <>
-            <div className="ring">
-              {spoke.soon ? (
-                <span className="plus">+</span>
-              ) : (
-                // eslint-disable-next-line @next/next/no-img-element -- third-party brand logos on origins we do not control
-                <img src={spoke.img!.src} alt={spoke.img!.alt} style={spoke.img!.style} />
-              )}
-            </div>
-            <div className="lbl">{spoke.label}</div>
-          </>
-        )
-
         const handlers = {
           onMouseEnter: () => setHovered(i),
           onMouseLeave: () => setHovered(null),
@@ -205,22 +158,33 @@ export function HubGraphic() {
           onBlur: () => setHovered(null),
         }
 
-        return spoke.href ? (
+        if (spoke.soon) {
+          return (
+            <div key={i} className="node spoke node-soon" style={style} {...handlers}>
+              <div className="ring">
+                <span className="plus">+</span>
+              </div>
+              <div className="lbl">{spoke.label}</div>
+            </div>
+          )
+        }
+
+        const { name, href } = BRAND_LOGOS[spoke.brand]
+        return (
           <a
             key={i}
-            href={spoke.href}
+            href={href}
             className="node spoke"
             style={style}
             target="_blank"
             rel="noopener noreferrer"
             {...handlers}
           >
-            {inner}
+            <div className="ring">
+              <BrandLogo brand={spoke.brand} />
+            </div>
+            <div className="lbl">{name}</div>
           </a>
-        ) : (
-          <div key={i} className="node spoke node-soon" style={style} {...handlers}>
-            {inner}
-          </div>
         )
       })}
     </div>

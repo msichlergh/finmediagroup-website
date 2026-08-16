@@ -35,7 +35,7 @@ export function BigMark({ parallax = false }: { parallax?: boolean }) {
   }, [parallax])
 
   return (
-    <svg ref={ref} className="big-mark" style={{ color: '#fff' }}>
+    <svg ref={ref} className="big-mark">
       <use href="#fmg-mark" />
     </svg>
   )

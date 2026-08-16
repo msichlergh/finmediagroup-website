@@ -55,7 +55,7 @@ export default function Page() {
             <div className="s">
               <div className="n">
                 4
-                <span style={{ fontSize: ".5em", fontWeight: "400", color: "var(--faint)" }}>
+                <span style={{ fontSize: ".5em", fontWeight: "400", color: "var(--text-faint)" }}>
                   +
                 </span>
               </div>
@@ -193,9 +193,6 @@ export default function Page() {
                 <span className="cat">
                   Forex News
                 </span>
-                <span className="dot">
-                  ↗
-                </span>
               </div>
               <h3>
                 Daily FX Wire
@@ -218,7 +215,7 @@ export default function Page() {
                 </span>
               </div>
             </a>
-            <div className="card is-soon reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--steel)" }}>
+            <div className="card is-soon reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--bg-subtle)" }}>
               <div className="top">
                 <span className="cat soon">
                   In Development
@@ -232,11 +229,11 @@ export default function Page() {
               <p style={{ flex: "none" }}>
                 We&apos;re building and preparing new properties across the finance and trading space — joining the network as they go live.
               </p>
-              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--line-strong)", paddingBottom: "3px" }}>
-                Partner with us →
+              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
+                Partner with us
               </Link>
             </div>
-            <div className="card reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--steel)" }}>
+            <div className="card reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--bg-subtle)" }}>
               <div className="cat" style={{ marginBottom: "14px" }}>
                 Always Building
               </div>
@@ -248,8 +245,8 @@ export default function Page() {
               <p style={{ flex: "none" }}>
                 We launch and acquire properties where independent media can genuinely serve an audience.
               </p>
-              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--line-strong)", paddingBottom: "3px" }}>
-                Pitch a partnership →
+              <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
+                Pitch a partnership
               </Link>
             </div>
           </div>
@@ -271,7 +268,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Independent Editorial
@@ -285,7 +282,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Shared Infrastructure
@@ -299,7 +296,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Compounding Reach
@@ -325,7 +322,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Start a Conversation →
+                Start a Conversation
               </Link>
               <Link className="btn btn-ghost" href="/awards">
                 See Our Awards

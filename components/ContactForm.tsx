@@ -48,7 +48,7 @@ export function ContactForm() {
       </div>
       <div className="field full">
         <button className="btn btn-primary" type="submit" style={{ width: 'fit-content' }}>
-          Send Message →
+          Send Message
         </button>
       </div>
     </form>
