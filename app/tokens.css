@@ -141,6 +141,14 @@
   --glow: radial-gradient(90% 60% at 50% -10%, rgba(18, 18, 24, 0.028), transparent 62%);
   --hero-wash: linear-gradient(160deg, var(--n-50), var(--n-0) 55%, var(--n-25));
 
+  /* Depth treatment for large bands: a wash of light catching the top edge
+     over a vertical fall-off. Subtle enough to read as material, not as a
+     gradient someone applied. */
+  --depth-bg: var(--n-50);
+  --depth: radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.9), transparent 62%),
+    linear-gradient(180deg, var(--n-0) 0%, var(--n-50) 100%);
+  --edge-highlight: rgba(255, 255, 255, 0.9);
+
   /* the layered rounded-rect corner motif */
   --motif-stroke: rgba(18, 18, 24, 0.07);
   --motif-opacity: 1;
@@ -203,6 +211,13 @@
 
   --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
   --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
+
+  /* A step darker than --bg so the band reads as beneath the page, lit from
+     the top edge and falling away toward the bottom. */
+  --depth-bg: #0c0c11;
+  --depth: radial-gradient(120% 85% at 50% 0%, rgba(255, 255, 255, 0.055), transparent 58%),
+    linear-gradient(180deg, #17171f 0%, #0b0b0f 100%);
+  --edge-highlight: rgba(255, 255, 255, 0.07);
 
   --motif-stroke: rgba(255, 255, 255, 0.08);
   --motif-opacity: 0.85;

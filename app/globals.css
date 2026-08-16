@@ -1467,6 +1467,16 @@ footer {
   margin-top: var(--space-9);
 }
 
+/* The footer carries the depth treatment: darker ground, light catching the
+   top edge, falling away to the bottom, texture laid over the top. The inset
+   hairline is what sells it — it reads as a lit edge rather than a border. */
+footer.on-dark {
+  background-color: var(--depth-bg);
+  background-image: var(--texture), var(--depth);
+  box-shadow: inset 0 1px 0 var(--edge-highlight);
+  border-top-color: transparent;
+}
+
 .foot-top {
   display: grid;
   grid-template-columns: 1.7fr 1fr 1fr 1fr;
