@@ -20,68 +20,62 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="home">
+      {/* Hero is one contained card: copy and figures on the left, the network
+          diagram on the right sitting lower than the headline so it balances
+          against the stats row. */}
       <section className="hero">
-        <div className="glow-top" />
         <div className="wrap">
-          <div className="hero-grid">
-            <div className="hero-text">
-              <span className="eyebrow">
-                Media & Services Group · Finance & Trading
-              </span>
-              <h1>
-                <span className="l">
-                  Be Relevant.
+          <div className="hero-card">
+            <div className="glow-top" />
+            <div className="hero-grid">
+              <div className="hero-text">
+                <span className="eyebrow">
+                  Media &amp; Services Group · Finance &amp; Trading
                 </span>
-                <span className="l">
-                  Be Present.
-                </span>
-              </h1>
-              <p className="lead">
-                FinMedia Group launches, grows, and amplifies the financial media brands the industry trusts. Four core properties today and more on the way — leading YouTube channels, the awards firms display, and the events where the industry meets, built by a team recognised across the space.
-              </p>
-              <div className="cta-row">
-                <Link className="btn btn-primary" href="/network">
-                  Explore the Network
-                </Link>
-                <Link className="btn btn-ghost" href="/contact">
-                  Work With Us
-                </Link>
+                <h1>
+                  <span className="l">Be Relevant.</span>
+                  <span className="l">Be Present.</span>
+                </h1>
+                <p className="lead">
+                  FinMedia Group launches, grows, and amplifies the financial media brands the
+                  industry trusts. Four core properties today and more on the way — leading YouTube
+                  channels, the awards firms display, and the events where the industry meets, built
+                  by a team recognised across the space.
+                </p>
+                <div className="cta-row">
+                  <Link className="btn btn-primary" href="/network">
+                    Explore the Network
+                  </Link>
+                  <Link className="btn btn-ghost" href="/contact">
+                    Work With Us
+                  </Link>
+                </div>
+
+                <div className="hero-stats">
+                  <div className="s">
+                    <CountUp to={700} suffix="+" />
+                    <div className="kk">Brands Listed</div>
+                  </div>
+                  <div className="s">
+                    <CountUp to={50} suffix="K+" />
+                    <div className="kk">Email Subscribers</div>
+                  </div>
+                  <div className="s">
+                    <CountUp to={50} suffix="+" />
+                    <div className="kk">Partnerships</div>
+                  </div>
+                  <div className="s">
+                    <CountUp to={40} suffix="K+" />
+                    <div className="kk">Visitors / Mo</div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <HubGraphic />
-          </div>
-        </div>
-      </section>
-      <section className="sec-sm" style={{ paddingTop: "20px" }}>
-        <div className="wrap">
-          <div className="stats reveal">
-            <div className="s">
-              <CountUp to={700} suffix="+" />
-              <div className="kk">
-                Brands Listed
-              </div>
-            </div>
-            <div className="s">
-              <CountUp to={50} suffix="K+" />
-              <div className="kk">
-                Email Subscribers
-              </div>
-            </div>
-            <div className="s">
-              <CountUp to={50} suffix="+" />
-              <div className="kk">
-                Partnerships
-              </div>
-            </div>
-            <div className="s">
-              <CountUp to={40} suffix="K+" />
-              <div className="kk">
-                High-Intent Visitors / Mo
-              </div>
+              <HubGraphic />
             </div>
           </div>
-          <p style={{ textAlign: "center", color: "var(--text-faint)", fontSize: "13px", marginTop: "18px" }}>
-            Quality over volume — a targeted, decision-stage audience of traders, investors, and industry professionals.
+          <p className="hero-note">
+            Quality over volume — a targeted, decision-stage audience of traders, investors, and
+            industry professionals.
           </p>
         </div>
       </section>
