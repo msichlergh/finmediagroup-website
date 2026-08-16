@@ -419,7 +419,7 @@ section {
 }
 
 .sec-sm {
-  padding: var(--space-8) 0;
+  padding: var(--space-7) 0;
 }
 
 /* Sections that used to carry an inline padding-top from the legacy markup.
