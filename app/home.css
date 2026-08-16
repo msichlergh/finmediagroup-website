@@ -56,7 +56,8 @@
    space on both diagonals. */
 .hero h1 {
   max-width: 16ch;
-  margin: var(--space-4) 0 0;
+  /* the top margin existed to clear the eyebrow pill, which is gone */
+  margin: 0;
 }
 
 .hero p.lead {
