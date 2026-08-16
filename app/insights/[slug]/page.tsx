@@ -21,11 +21,11 @@ export async function generateMetadata({
   return {
     title,
     description: article.excerpt,
-    alternates: { canonical: `/news/${article.slug}` },
+    alternates: { canonical: `/insights/${article.slug}` },
     openGraph: {
       title,
       description: article.excerpt,
-      url: `/news/${article.slug}`,
+      url: `/insights/${article.slug}`,
       type: 'article',
       publishedTime: article.published,
     },
@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <span>Share:</span>
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                    `https://finmediagroup.com/news/${article.slug}`
+                    `https://finmediagroup.com/insights/${article.slug}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -104,7 +104,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </a>
                 <a
                   href={`https://x.com/intent/tweet?url=${encodeURIComponent(
-                    `https://finmediagroup.com/news/${article.slug}`
+                    `https://finmediagroup.com/insights/${article.slug}`
                   )}&text=${encodeURIComponent(article.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"

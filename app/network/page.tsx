@@ -47,7 +47,7 @@ export default function Page() {
               </div>
             </div>
             <div className="s">
-              <CountUp to={40} suffix="K+" />
+              <CountUp to={150} suffix="K+" />
               <div className="kk">
                 High-Intent Monthly Visitors
               </div>

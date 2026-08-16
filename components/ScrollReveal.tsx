@@ -31,8 +31,10 @@ export function ScrollReveal() {
       { threshold: 0.1 }
     )
 
+    // A very short stagger only — enough to avoid everything moving in
+    // lockstep, not enough to read as a cascade.
     targets.forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 3) * 0.08}s`
+      el.style.transitionDelay = `${(i % 3) * 0.04}s`
       io.observe(el)
     })
 

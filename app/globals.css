@@ -360,7 +360,7 @@ nav.links a.active {
 .page-hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
+  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-5);
   overflow: hidden;
 }
 
@@ -406,7 +406,7 @@ section {
    Zero meant the eyebrow badge sat flush against the section edge with no
    room to breathe; this keeps consecutive sections tight without crowding. */
 .sec-tight {
-  padding-top: var(--space-6);
+  padding-top: var(--space-5);
 }
 
 .sec-head {
@@ -438,10 +438,13 @@ section {
 
 /* ---------- scroll reveal ---------- */
 
+/* Deliberately understated: a short lift and a fade on a plain ease-out.
+   The long travel and spring curve this replaced read as consumer-app
+   flourish, which is the wrong register for the brand. */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+  transform: translateY(8px);
+  transition: opacity .45s ease-out, transform .45s ease-out;
 }
 
 .reveal.in {
@@ -1563,9 +1566,9 @@ footer {
    ============================================================ */
 
 @media (max-width: 1140px) {
-  /* Collapse the links and the CTA, but keep the theme switch reachable. */
-  nav.links,
-  .nav-actions .btn {
+  /* Only the links collapse — the bar has room for the CTA, and burying the
+     one conversion action behind a menu is a needless tap. */
+  nav.links {
     display: none;
   }
   .nav-burger {
@@ -1628,6 +1631,12 @@ footer {
   header .nav {
     width: calc(100% - var(--space-5) * 2);
     padding-left: var(--space-3);
+    gap: var(--space-3);
+  }
+  /* trimmed so the brand, the CTA and the burger all fit at 375px */
+  .nav-actions .btn {
+    padding: 8px 14px;
+    font-size: var(--text-xs);
   }
   .mobile-menu {
     top: calc(var(--header-h) - var(--space-2));
@@ -1635,7 +1644,7 @@ footer {
     right: var(--space-5);
   }
   .page-hero {
-    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
+    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-5);
   }
   .pillars,
   .pf-grid,
@@ -1752,4 +1761,116 @@ footer.depth {
 
 .cta.depth {
   border-color: transparent;
+}
+
+/* ============================================================
+   team / leadership
+   ============================================================ */
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.member {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.member:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.member h3 {
+  font-size: var(--text-h3);
+  margin-top: var(--space-4);
+}
+
+.member-role {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-1);
+}
+
+.member-bio {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-3);
+}
+
+.member-link {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 2px;
+}
+
+/* Headshot, or the monogram on a tinted disc until one exists. */
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatar svg {
+  width: 44%;
+  height: 44%;
+  aspect-ratio: 1 / 1;
+  color: var(--text);
+  opacity: .22;
+}
+
+.avatar-md { width: 76px; height: 76px }
+.avatar-sm { width: 46px; height: 46px }
+
+/* attribution under a pull quote */
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.byline-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-body);
+}
+
+.byline-role {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  .team { grid-template-columns: repeat(2, 1fr) }
+}
+
+@media (max-width: 620px) {
+  .team { grid-template-columns: 1fr }
 }

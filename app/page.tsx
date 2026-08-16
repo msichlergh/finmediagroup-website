@@ -32,7 +32,7 @@ export default function Page() {
               <Mark />
             </div>
             <span className="eyebrow">
-              Media &amp; Services Group · Finance &amp; Trading
+              Media &amp; Authority Network · Finance &amp; Trading
             </span>
 
             <h1>
@@ -70,7 +70,7 @@ export default function Page() {
                 <div className="kk">Partnerships</div>
               </div>
               <div className="s">
-                <CountUp to={40} suffix="K+" />
+                <CountUp to={150} suffix="K+" />
                 <div className="kk">Visitors / Mo</div>
               </div>
             </div>

@@ -4,13 +4,13 @@ import { Mark } from '@/components/Mark'
 import { ARTICLES } from '@/lib/news'
 
 export const metadata: Metadata = {
-  title: "Press & News",
+  title: "Insights",
   description: "Announcements, partnerships, and milestones from across FinMedia Group and its brands.",
-  alternates: { canonical: "/news" },
+  alternates: { canonical: "/insights" },
   openGraph: {
-    title: "Press & News — FinMedia Group",
+    title: "Insights — FinMedia Group",
     description: "Announcements, partnerships, and milestones from across FinMedia Group and its brands.",
-    url: "/news",
+    url: "/insights",
   },
 }
 
@@ -21,7 +21,7 @@ export default function Page() {
         <div className="glow-top" />
         <div className="wrap reveal">
           <span className="eyebrow">
-            Press & News
+            Insights
           </span>
           <h1>
             The latest from the network.
@@ -38,7 +38,7 @@ export default function Page() {
               <Link
                 key={a.slug}
                 className={`news-card reveal${a.feature ? ' feature' : ''}`}
-                href={`/news/${a.slug}`}
+                href={`/insights/${a.slug}`}
               >
                 <div className="thumb">
                   <Mark />

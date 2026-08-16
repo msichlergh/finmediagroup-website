@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { Byline, TeamSection } from '@/components/TeamSection'
+import { LEADERSHIP } from '@/lib/team'
 import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
 import { CountUp } from '@/components/CountUp'
@@ -203,12 +205,7 @@ export default function Page() {
               <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 For years we helped brands find their voice on external platforms. With FinMedia Group, we&apos;ve built the destinations where the conversations actually happen — platforms designed not just to inform, but to convert.
               </p>
-              <p style={{ fontWeight: "600", marginTop: "18px", fontFamily: "var(--font-prompt)" }}>
-                Karol Cempa
-              </p>
-              <p style={{ color: "var(--text-faint)", fontSize: "13px" }}>
-                Chief Executive Officer, FinMedia Group
-              </p>
+              <Byline member={LEADERSHIP[0]} />
             </div>
           </div>
         </div>
@@ -311,6 +308,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <TeamSection />
       <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark depth textured reveal">

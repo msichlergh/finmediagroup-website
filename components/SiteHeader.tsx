@@ -74,7 +74,6 @@ export function SiteHeader() {
             {l.label}
           </Link>
         ))}
-        <Link href="/contact">Get in Touch</Link>
       </div>
     </>
   )

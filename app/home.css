@@ -42,7 +42,7 @@
   color: var(--text);
   pointer-events: none;
   opacity: 0;
-  animation: fadein 1s .55s forwards;
+  animation: fadein .6s .18s forwards;
 }
 
 .hero-mark svg {
@@ -75,7 +75,7 @@
   padding-top: var(--space-6);
   border-top: 1px solid var(--border);
   opacity: 0;
-  animation: rise .8s .74s forwards;
+  animation: rise .5s .34s forwards;
 }
 
 .hero-stats .n {
@@ -95,7 +95,7 @@
 
 .hero .eyebrow {
   opacity: 0;
-  animation: rise .8s .1s forwards;
+  animation: rise .5s .04s forwards;
 }
 
 .hero h1 {
@@ -108,11 +108,11 @@
 .hero h1 .l {
   display: block;
   opacity: 0;
-  animation: rise .8s forwards;
+  animation: rise .5s forwards;
 }
 
-.hero h1 .l:nth-child(1) { animation-delay: .18s }
-.hero h1 .l:nth-child(2) { animation-delay: .30s; color: var(--text-faint) }
+.hero h1 .l:nth-child(1) { animation-delay: .10s }
+.hero h1 .l:nth-child(2) { animation-delay: .16s; color: var(--text-faint) }
 
 .hero p.lead {
   max-width: 52ch;
@@ -120,7 +120,7 @@
   font-size: var(--text-lead);
   color: var(--text-muted);
   opacity: 0;
-  animation: rise .8s .5s forwards;
+  animation: rise .5s .22s forwards;
 }
 
 .hero .cta-row {
@@ -129,11 +129,11 @@
   gap: var(--space-3);
   flex-wrap: wrap;
   opacity: 0;
-  animation: rise .8s .62s forwards;
+  animation: rise .5s .28s forwards;
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(22px) }
+  from { opacity: 0; transform: translateY(8px) }
   to { opacity: 1; transform: none }
 }
 
@@ -148,7 +148,7 @@
   justify-self: end;
   aspect-ratio: 1 / 1;
   opacity: 0;
-  animation: fadein 1s .7s forwards;
+  animation: fadein .6s .2s forwards;
 }
 
 @keyframes fadein {
