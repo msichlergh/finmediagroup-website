@@ -23,7 +23,9 @@ export default function Page() {
             Advisory & Ventures
           </span>
           <h1>
-            We don&apos;t just advise. We build.
+            We don&apos;t just advise.
+            <br />
+            We build.
           </h1>
           <p className="lead">
             We&apos;ve launched and scaled media brands, awards, and platforms across finance and trading. We bring that operating experience to companies in the space — as advisors, and as builders backing new ventures.

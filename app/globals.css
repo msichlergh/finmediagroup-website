@@ -360,7 +360,7 @@ nav.links a.active {
 .page-hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-7);
+  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
   overflow: hidden;
 }
 
@@ -369,7 +369,7 @@ nav.links a.active {
 }
 
 .page-hero h1 {
-  font-size: var(--text-display);
+  font-size: var(--text-display-sm);
   margin-top: var(--space-5);
   max-width: 18ch;
 }
@@ -383,7 +383,7 @@ nav.links a.active {
 }
 
 .page-hero .cta-row {
-  margin-top: var(--space-7);
+  margin-top: var(--space-5);
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
@@ -1154,7 +1154,7 @@ section {
 .cap h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: var(--text-h2);
+  font-size: var(--text-h3-lg);
   line-height: var(--leading-heading);
   margin-top: var(--space-2);
 }
@@ -1287,11 +1287,19 @@ section {
   overflow: hidden;
 }
 
+/* The sprite symbol is square. Without an explicit height the <svg> takes the
+   UA default and crops the mark, which is why it read small and clipped. */
+.big-mark {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
 .split .panel-visual .big-mark {
   position: absolute;
-  right: -40px;
-  bottom: -50px;
-  width: 300px;
+  right: -34px;
+  top: var(--space-4);
+  bottom: auto;
+  width: 380px;
   color: var(--text);
   opacity: var(--watermark-opacity);
 }
@@ -1395,7 +1403,7 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
+  width: 420px;
   color: var(--text);
   opacity: var(--watermark-opacity);
 }
@@ -1627,7 +1635,7 @@ footer {
     right: var(--space-5);
   }
   .page-hero {
-    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-7);
+    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
   }
   .pillars,
   .pf-grid,

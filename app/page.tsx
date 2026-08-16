@@ -26,6 +26,11 @@ export default function Page() {
         <div className="wrap">
           <div className="hero-card">
             <div className="glow-top" />
+            {/* The monogram holds the right of the card now the diagram is out —
+                solid, not a watermark. */}
+            <div className="hero-mark" aria-hidden="true">
+              <Mark />
+            </div>
             <span className="eyebrow">
               Media &amp; Services Group · Finance &amp; Trading
             </span>
