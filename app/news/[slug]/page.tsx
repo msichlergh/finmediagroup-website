@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Mark } from '@/components/Mark'
+import Image from 'next/image'
 import { ArticleCta } from '@/components/ArticleCta'
 import { ARTICLES, getArticle, type Block } from '@/lib/news'
 
@@ -83,9 +83,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <section className="article-section">
         <div className="wrap">
           <article className="article">
-            <div className="a-hero">
-              <Mark />
-            </div>
+            {article.image && (
+              <div className="a-hero">
+                <Image src={article.image} alt="" width={1200} height={675} sizes="720px" priority />
+              </div>
+            )}
             <div className="article-body">
               {article.body.map((block, i) => (
                 <Body key={i} block={block} i={i} />

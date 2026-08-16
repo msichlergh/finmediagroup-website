@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mark } from '@/components/Mark'
+import { NewsList } from '@/components/NewsList'
 import { ARTICLES } from '@/lib/news'
 
 export const metadata: Metadata = {
@@ -33,28 +33,7 @@ export default function Page() {
       </section>
       <section className="sec sec-tight">
         <div className="wrap">
-          <div className="news-grid">
-            {ARTICLES.map((a) => (
-              <Link
-                key={a.slug}
-                className={`news-card reveal${a.feature ? ' feature' : ''}`}
-                href={`/news/${a.slug}`}
-              >
-                <div className="thumb">
-                  <Mark />
-                </div>
-                <div className="nc-body">
-                  <div className="nc-meta">
-                    <span className="tagpill">{a.tag}</span>
-                    <time dateTime={a.published}>{a.date}</time>
-                  </div>
-                  <h3>{a.title}</h3>
-                  <p>{a.excerpt}</p>
-                  <span className="rd">Read More</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <NewsList articles={ARTICLES} />
         </div>
       </section>
       <section className="sec sec-tight">
