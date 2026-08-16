@@ -89,7 +89,7 @@ export function BrandLogo({ brand, width }: { brand: BrandKey; width?: number })
 export function BrandTile({ brand }: { brand: BrandKey }) {
   return (
     <span className="brand-tile" aria-hidden="true">
-      <BrandLogo brand={brand} width={34} />
+      <BrandLogo brand={brand} width={26} />
     </span>
   )
 }
