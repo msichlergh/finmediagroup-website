@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="foot-top">
           <div className="foot-brand">
             <Link className="brand" href="/">
-              <Mark className="mark" style={{ color: '#fff' }} />
+              <Mark className="mark" />
               <span className="wordmark">
                 <b>FinMedia</b>
                 <span>Group</span>

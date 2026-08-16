@@ -32,7 +32,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/contact">
-              Work With Us →
+              Work With Us
             </Link>
             <Link className="btn btn-ghost" href="/network">
               Explore the Network
@@ -64,7 +64,7 @@ export default function Page() {
             <div className="s">
               <div className="n">
                 4
-                <span style={{ fontSize: ".5em", fontWeight: "400", color: "var(--faint)" }}>
+                <span style={{ fontSize: ".5em", fontWeight: "400", color: "var(--text-faint)" }}>
                   +
                 </span>
               </div>
@@ -85,20 +85,20 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(28px,3.6vw,46px)", marginTop: "18px" }}>
                 From an agency to an audience.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "20px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 We began as FinPR — a fintech public relations agency that helped financial brands find their voice across the world&apos;s media. We were good at it, and we became one of the most recognised names in the space.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 But the more brands we placed on someone else&apos;s platform, the clearer it became: the real value wasn&apos;t in renting attention — it was in owning the destinations where the conversations actually happen. So we built them.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 One platform became several. Several became a network. In 2026, FinPR formally evolved into FinMedia Group — shifting from promotion to presence, and from chasing the industry narrative to building the destinations that drive it.
               </p>
             </div>
             <div className="panel-visual reveal">
               <BigMark parallax />
               <div className="vlabel">
-                FinPR → FinMedia Group
+                FinPR FinMedia Group
               </div>
               <div>
                 <div className="vbig">
@@ -200,13 +200,13 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", marginTop: "18px", lineHeight: "1.2", fontWeight: "600" }}>
                 &quot;We&apos;ve stopped chasing the industry narrative and started building the digital destinations that drive it.&quot;
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "18px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 For years we helped brands find their voice on external platforms. With FinMedia Group, we&apos;ve built the destinations where the conversations actually happen — platforms designed not just to inform, but to convert.
               </p>
-              <p style={{ color: "#fff", fontWeight: "600", marginTop: "18px", fontFamily: "var(--font-prompt)" }}>
+              <p style={{ fontWeight: "600", marginTop: "18px", fontFamily: "var(--font-prompt)" }}>
                 Karol Cempa
               </p>
-              <p style={{ color: "var(--faint)", fontSize: "13px" }}>
+              <p style={{ color: "var(--text-faint)", fontSize: "13px" }}>
                 Chief Executive Officer, FinMedia Group
               </p>
             </div>
@@ -232,7 +232,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 An expert team
@@ -246,7 +246,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Operators, not spectators
@@ -260,7 +260,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Recognised & reputable
@@ -282,14 +282,14 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(26px,3.4vw,40px)", marginTop: "18px" }}>
                 Operators who know the industry.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "18px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 Led by CEO Karol Cempa, FinMedia Group is built by a team of media operators, creators, and strategists with deep roots in fintech, prop trading, and brokerage. The same people who built our own platforms bring that experience to every partner we work with.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 Headquartered in Singapore with offices supporting clients globally, we combine local presence with a worldwide reach.
               </p>
               <Link className="btn btn-ghost" style={{ marginTop: "24px" }} href="/careers">
-                Join the Team →
+                Join the Team
               </Link>
             </div>
             <div className="panel-visual reveal">
@@ -314,7 +314,7 @@ export default function Page() {
       <section className="sec" style={{ paddingTop: "0" }}>
         <div className="wrap">
           <div className="cta reveal">
-            <div className="glow-top" style={{ borderRadius: "var(--r-2)" }} />
+            <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">
               Be Relevant. Be Present.
@@ -327,7 +327,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Get in Touch →
+                Get in Touch
               </Link>
               <Link className="btn btn-ghost" href="/network">
                 Explore the Network

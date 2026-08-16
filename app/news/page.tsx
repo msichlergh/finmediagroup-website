@@ -53,7 +53,7 @@ export default function Page() {
                   FinPR officially transitions into FinMedia Group — a finance and trading media and authority network focused on owned audiences and performance media.
                 </p>
                 <span className="rd">
-                  Read more →
+                  Read more
                 </span>
               </div>
             </Link>
@@ -77,7 +77,7 @@ export default function Page() {
                   Our flagship brand joins one of the industry&apos;s biggest events as an official media partner.
                 </p>
                 <span className="rd">
-                  Read more →
+                  Read more
                 </span>
               </div>
             </a>
@@ -101,7 +101,7 @@ export default function Page() {
                   Major firms feature awards from our brands front and centre on their expo booths and campaigns.
                 </p>
                 <span className="rd">
-                  Read more →
+                  Read more
                 </span>
               </div>
             </a>
@@ -125,7 +125,7 @@ export default function Page() {
                   A milestone for the directory as the network&apos;s reach across the industry continues to grow.
                 </p>
                 <span className="rd">
-                  Read more →
+                  Read more
                 </span>
               </div>
             </a>
@@ -149,7 +149,7 @@ export default function Page() {
                   FinMedia Group is preparing the next wave of properties to join the network across the finance and trading space.
                 </p>
                 <span className="rd">
-                  Read more →
+                  Read more
                 </span>
               </div>
             </a>
@@ -176,7 +176,7 @@ export default function Page() {
                 Interviews, comment, and press questions.
               </p>
               <a href="mailto:press@finmediagroup.com">
-                press@finmediagroup.com →
+                press@finmediagroup.com
               </a>
             </div>
             <div className="k-item">
@@ -187,7 +187,7 @@ export default function Page() {
                 Logos, guidelines, and imagery for publication.
               </p>
               <a href="mailto:press@finmediagroup.com">
-                Request assets →
+                Request assets
               </a>
             </div>
             <div className="k-item">
@@ -198,7 +198,7 @@ export default function Page() {
                 Background, leadership, and the company story.
               </p>
               <Link href="/about">
-                Read about us →
+                Read about us
               </Link>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <a className="btn btn-primary" href="mailto:press@finmediagroup.com">
-                Media Enquiries →
+                Media Enquiries
               </a>
               <Link className="btn btn-ghost" href="/network">
                 See the Network

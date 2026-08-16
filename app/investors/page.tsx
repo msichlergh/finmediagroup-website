@@ -32,7 +32,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href="mailto:investors@finmediagroup.com">
-              Request Information →
+              Request Information
             </a>
             <Link className="btn btn-ghost" href="/about">
               Our Story
@@ -64,7 +64,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Owned, not rented
@@ -78,7 +78,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Multiple revenue lines
@@ -92,7 +92,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 A repeatable playbook
@@ -117,10 +117,10 @@ export default function Page() {
                 <br />
                 Room to run.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "20px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 We&apos;ve validated the model: profitable brands, a growing owned audience, and partnerships across the industry. The opportunity now is acceleration — launching new properties, scaling the ones that work, and formalising high-margin lines like awards and events.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 We&apos;re open to the right strategic partners and investors who bring more than capital — distribution, expertise, or access that helps the network compound faster.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function Page() {
       <section className="sec" style={{ paddingTop: "0" }}>
         <div className="wrap">
           <div className="cta reveal">
-            <div className="glow-top" style={{ borderRadius: "var(--r-2)" }} />
+            <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">
               Investors
@@ -159,7 +159,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <a className="btn btn-primary" href="mailto:investors@finmediagroup.com">
-                Request Information →
+                Request Information
               </a>
               <Link className="btn btn-ghost" href="/about">
                 About FinMedia

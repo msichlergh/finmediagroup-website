@@ -7,8 +7,9 @@ export function BrandCorner() {
         preserveAspectRatio="xMaxYMax slice"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g fill="none" stroke="#fff" transform="translate(560,430) rotate(-32)">
-          <g strokeOpacity="0.09" strokeWidth="1.1">
+        {/* stroke colour and alpha both come from --motif-stroke via CSS */}
+        <g fill="none" stroke="currentColor" transform="translate(560,430) rotate(-32)">
+          <g strokeWidth="1.1">
             <rect x="0" y="0" width="460" height="330" rx="44" />
             <rect x="58" y="40" width="460" height="330" rx="44" />
             <rect x="116" y="80" width="460" height="330" rx="44" />

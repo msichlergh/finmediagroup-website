@@ -49,13 +49,14 @@ export function GrowthCurve() {
         aria-hidden="true"
       >
         <defs>
+          {/* currentColor comes from .growth-svg, so the fill follows the theme */}
           <linearGradient id="growthgrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(255,255,255,.16)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+            <stop offset="0%" stopColor="currentColor" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
           </linearGradient>
         </defs>
         {/* gridlines */}
-        <g stroke="rgba(255,255,255,.07)" strokeWidth="1">
+        <g stroke="currentColor" strokeOpacity="0.08" strokeWidth="1">
           <line x1="0" y1="90" x2="1000" y2="90" />
           <line x1="0" y1="180" x2="1000" y2="180" />
           <line x1="0" y1="270" x2="1000" y2="270" />

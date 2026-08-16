@@ -31,7 +31,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href="mailto:partners@finmediagroup.com">
-              Become a Partner →
+              Become a Partner
             </a>
             <Link className="btn btn-ghost" href="/network">
               See the Network
@@ -111,10 +111,10 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(28px,3.6vw,46px)", marginTop: "18px" }}>
                 Official media partner to the industry&apos;s biggest stages.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "20px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 Our brands are chosen as official media partners for the flagship expos and events where the trading industry gathers — covering, amplifying, and helping shape the conversation before, during, and after the doors open.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 For event organisers, that means a media partner with a real, engaged audience already watching. For our audience, it means front-row access to the moments that matter.
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function Page() {
                 01
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Real, owned audience
@@ -167,7 +167,7 @@ export default function Page() {
                 02
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Established credibility
@@ -181,7 +181,7 @@ export default function Page() {
                 03
               </span>
               <div className="ico">
-                <Mark width={22} height={22} style={{ color: "#fff" }} />
+                <Mark width={22} height={22} />
               </div>
               <h3>
                 Transparent & aligned
@@ -207,7 +207,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <a className="btn btn-primary" href="mailto:partners@finmediagroup.com">
-                Become a Partner →
+                Become a Partner
               </a>
               <Link className="btn btn-ghost" href="/contact">
                 Get in Touch

@@ -1,27 +1,31 @@
 import type { Metadata, Viewport } from 'next'
-import { Montserrat, Prompt } from 'next/font/google'
+import { Instrument_Sans, Lora } from 'next/font/google'
 import { BrandCorner } from '@/components/BrandCorner'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Sprite } from '@/components/Sprite'
 import { SITE_URL } from '@/lib/site'
+import { THEME_INIT_SCRIPT } from '@/lib/theme'
 
+import './tokens.css'
 import './globals.css'
 import './home.css'
-import './port.css'
 
-const prompt = Prompt({
+/** Display face — headlines, stat numerals, pull quotes. */
+const lora = Lora({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-prompt',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
   display: 'swap',
 })
 
-const montserrat = Montserrat({
+/** Working face — body, nav, buttons, labels, card titles. */
+const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-montserrat',
+  variable: '--font-instrument-sans',
   display: 'swap',
 })
 
@@ -52,13 +56,25 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
-  colorScheme: 'dark',
+  // matches --bg in each theme, so the browser chrome does not clash
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f7f7f8' },
+    { media: '(prefers-color-scheme: dark)', color: '#121218' },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${prompt.variable} ${montserrat.variable}`}>
+    // suppressHydrationWarning: THEME_INIT_SCRIPT sets data-theme before React
+    // hydrates, so the server and client markup differ on this attribute by design.
+    <html
+      lang="en"
+      className={`${lora.variable} ${instrumentSans.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <BrandCorner />
         <Sprite />

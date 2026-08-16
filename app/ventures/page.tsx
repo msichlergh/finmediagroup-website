@@ -30,7 +30,7 @@ export default function Page() {
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/contact">
-              Work With Us →
+              Work With Us
             </Link>
             <a className="btn btn-ghost" href="#advisory">
               What We Offer
@@ -110,10 +110,10 @@ export default function Page() {
               <h2 style={{ fontSize: "clamp(26px,3.4vw,40px)", marginTop: "18px" }}>
                 Conviction, with skin in the game.
               </h2>
-              <p style={{ color: "var(--muted)", marginTop: "18px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "18px" }}>
                 Some opportunities are worth more than advice. When we see a gap where independent media, recognition, or a platform can genuinely serve an audience, we launch it — investing our infrastructure, capital, and operating teams to build it from the ground up.
               </p>
-              <p style={{ color: "var(--muted)", marginTop: "14px" }}>
+              <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 It&apos;s how our own network was built, and how we partner with founders who want a builder, not just a backer.
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function Page() {
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
-                Start a Conversation →
+                Start a Conversation
               </Link>
               <Link className="btn btn-ghost" href="/about">
                 About FinMedia
