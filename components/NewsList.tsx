@@ -1,8 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
-import { Mark } from './Mark'
 import type { Article } from '@/lib/news'
 
 const ALL = 'All'
@@ -47,13 +47,16 @@ export function NewsList({ articles }: { articles: Article[] }) {
         {shown.map((a) => (
           <Link
             key={a.slug}
-            // the wide feature card only makes sense in the unfiltered view
-            className={`news-card reveal${a.feature && active === ALL ? ' feature' : ''}`}
+            // The wide feature card only earns its width with a hero image;
+            // text-only it is the same content in twice the space.
+            className={`news-card reveal${a.feature && a.image && active === ALL ? ' feature' : ''}`}
             href={`/news/${a.slug}`}
           >
-            <div className="thumb">
-              <Mark />
-            </div>
+            {a.image && (
+              <div className="thumb">
+                <Image src={a.image} alt="" width={800} height={450} sizes="(max-width: 980px) 100vw, 33vw" />
+              </div>
+            )}
             <div className="nc-body">
               <div className="nc-meta">
                 <span className="tagpill">{a.tag}</span>

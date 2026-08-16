@@ -5,6 +5,11 @@
  * one place. Bodies are a small block union rather than raw HTML — it keeps the
  * markup in the renderer and makes this file safe to hand to a CMS later.
  *
+ * CATEGORIES: three, deliberately. Five tags across five posts meant every
+ * filter returned exactly one item, which is a table of contents, not a
+ * filter. Announcements = company news; Partnerships = who we work with;
+ * Network = standing and scale. Split further when the archive earns it.
+ *
  * NOTE ON CONTENT: everything below expands claims the site already made on the
  * news listing. Nothing factual has been added — no firm names, dates, figures
  * or quotes beyond what was already published. The four new pieces still need a
@@ -29,6 +34,12 @@ export type Article = {
   excerpt: string
   lead: string
   body: Block[]
+  /**
+   * Optional hero image, e.g. '/news/expo-floor.jpg'. When absent the card and
+   * the article render without an image slot — no placeholder box. Add real
+   * artwork here and it appears in both places.
+   */
+  image?: string
   /** shown wide on the listing */
   feature?: boolean
 }
@@ -37,7 +48,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'finmedia-launch',
     title: 'FinPR Evolves into FinMedia Group',
-    tag: 'Announcement',
+    tag: 'Announcements',
     date: 'February 2026',
     published: '2026-02-01',
     readingTime: '3 min read',
@@ -68,7 +79,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'funded-trading-media-partner-london-expo',
     title: 'Funded Trading named official media partner of the London Prop Trading Expo',
-    tag: 'Partnership',
+    tag: 'Partnerships',
     date: '2026',
     published: '2026-01-01',
     readingTime: '2 min read',
@@ -115,7 +126,7 @@ export const ARTICLES: Article[] = [
   {
     slug: '700-brands-listed',
     title: '700+ brands now listed across the network',
-    tag: 'Milestone',
+    tag: 'Network',
     date: '2026',
     published: '2025-11-01',
     readingTime: '2 min read',
@@ -136,7 +147,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'new-media-properties-in-development',
     title: 'New media properties in development',
-    tag: 'Upcoming',
+    tag: 'Announcements',
     date: '2026',
     published: '2025-10-01',
     readingTime: '2 min read',
