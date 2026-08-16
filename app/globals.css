@@ -1406,7 +1406,9 @@ section {
   position: relative;
   display: flex;
   gap: var(--space-4);
-  padding: var(--space-5) var(--space-1);
+  /* indented so the index sits off the edge and the hover rule has somewhere
+     to live without crowding it */
+  padding: var(--space-5) var(--space-4);
   border-bottom: 1px solid var(--border);
   transition: background-color .3s ease;
 }
@@ -1414,7 +1416,7 @@ section {
 .list-rows .row::before {
   content: "";
   position: absolute;
-  left: calc(var(--space-1) * -1);
+  left: 0;
   top: -1px;
   bottom: -1px;
   width: 2px;
@@ -1797,19 +1799,11 @@ footer {
   display: block;
 }
 
-/* Mark and name as one lockup, rather than the mark floating above it.
-   Inline, the tile reads as a marker beside a label — so the fact that the
-   source art does not fill a square stops being the first thing you notice. */
-.brand-lockup {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.brand-lockup h3 {
-  margin: 0;
-}
-
+/* Mark above the name, so the name, the url and the copy all start from the
+   card's left edge. Inline, only the name cleared the tile — the url beneath
+   still began at the edge, which left a stagger.
+   Kept at 40px: the earlier version read badly because it was 54px with a
+   wordmark floating in it, not because it sat above. */
 .brand-tile {
   width: 40px;
   height: 40px;
@@ -1821,6 +1815,7 @@ footer {
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
+  margin-bottom: var(--space-4);
 }
 
 /* light mark on the light page: knock it to solid ink so it reads */

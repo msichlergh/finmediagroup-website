@@ -271,10 +271,10 @@ export default function Page() {
           </div>
           <div className="pf-grid">
             <Link className="card reveal" href="/network">
-              <div className="brand-lockup">
-                <BrandTile brand="funded-trading" />
-                <h3>Funded Trading</h3>
-              </div>
+              <BrandTile brand="funded-trading" />
+              <h3>
+                Funded Trading
+              </h3>
               <div className="url">
                 fundedtrading.com
               </div>
@@ -297,10 +297,10 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="brand-lockup">
-                <BrandTile brand="my-trading-reviews" />
-                <h3>MyTradingReviews</h3>
-              </div>
+              <BrandTile brand="my-trading-reviews" />
+              <h3>
+                MyTradingReviews
+              </h3>
               <div className="url">
                 mytradingreviews.com
               </div>
@@ -320,10 +320,10 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="brand-lockup">
-                <BrandTile brand="daily-fx-wire" />
-                <h3>Daily FX Wire</h3>
-              </div>
+              <BrandTile brand="daily-fx-wire" />
+              <h3>
+                Daily FX Wire
+              </h3>
               <div className="url">
                 dailyfxwire.com
               </div>
@@ -343,10 +343,10 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="brand-lockup">
-                <BrandTile brand="finpr" />
-                <h3>FinPR</h3>
-              </div>
+              <BrandTile brand="finpr" />
+              <h3>
+                FinPR
+              </h3>
               <div className="url">
                 finpr.com
               </div>
