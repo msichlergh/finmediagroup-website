@@ -56,7 +56,7 @@ export default function Page() {
                 You&apos;ll work across a network of established brands and the people who built them — gaining exposure to the trading and finance industry that&apos;s hard to get anywhere else.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Remote & Distributed
@@ -213,7 +213,7 @@ export default function Page() {
                 Email careers@finmediagroup.com
               </a>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Always Open

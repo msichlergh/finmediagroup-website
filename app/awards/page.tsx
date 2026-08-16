@@ -70,7 +70,7 @@ export default function Page() {
                 Winners feature our badges on booths, homepages, and campaigns because the recognition converts — and because it comes from brands the industry already trusts.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Seen on booths & campaigns

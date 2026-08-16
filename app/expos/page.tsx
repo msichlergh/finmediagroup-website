@@ -204,7 +204,7 @@ export default function Page() {
                 </div>
               </div>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 The in-person layer

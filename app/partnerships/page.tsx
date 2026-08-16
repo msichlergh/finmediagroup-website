@@ -118,7 +118,7 @@ export default function Page() {
                 For event organisers, that means a media partner with a real, engaged audience already watching. For our audience, it means front-row access to the moments that matter.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Trusted to amplify

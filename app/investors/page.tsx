@@ -124,7 +124,7 @@ export default function Page() {
                 We&apos;re open to the right strategic partners and investors who bring more than capital — distribution, expertise, or access that helps the network compound faster.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Selective & Strategic
