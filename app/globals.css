@@ -133,7 +133,7 @@ a {
 
 header {
   position: fixed;
-  top: var(--space-4);
+  top: var(--space-3);
   left: 0;
   right: 0;
   z-index: 100;
@@ -224,7 +224,7 @@ nav.links a::after {
   position: absolute;
   left: var(--space-3);
   right: var(--space-3);
-  bottom: 6px;
+  bottom: 8px;
   height: 1px;
   background: currentColor;
   opacity: .32;
@@ -1661,8 +1661,14 @@ footer {
   }
   header .nav {
     width: calc(100% - var(--space-8));
-    justify-content: space-between;
+    /* space-between spread the CTA into the middle of the bar; the CTA and
+       the burger belong together as one group on the right */
+    justify-content: flex-start;
+    gap: var(--space-2);
     padding-right: var(--space-2);
+  }
+  .nav-actions {
+    margin-left: auto;
   }
 }
 
@@ -1706,7 +1712,7 @@ footer {
 
 @media (max-width: 620px) {
   .wrap {
-    padding: 0 var(--space-5);
+    padding: 0 var(--space-4);
   }
   /* .wrap drops to --space-5 of padding here, so the bar has to follow or it
      sits narrower than the content it is supposed to line up with. */
@@ -1714,9 +1720,9 @@ footer {
     top: var(--space-2);
   }
   header .nav {
-    width: calc(100% - var(--space-5) * 2);
+    width: calc(100% - var(--space-4) * 2);
     padding-left: var(--space-3);
-    gap: var(--space-3);
+    gap: var(--space-2);
   }
   /* trimmed so the brand, the CTA and the burger all fit at 375px */
   .nav-actions .btn {
@@ -1725,8 +1731,8 @@ footer {
   }
   .mobile-menu {
     top: calc(var(--header-h) - var(--space-2));
-    left: var(--space-5);
-    right: var(--space-5);
+    left: var(--space-4);
+    right: var(--space-4);
   }
   .page-hero {
     padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-5);
