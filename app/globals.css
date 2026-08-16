@@ -269,6 +269,27 @@ nav.links a.active::after {
   background-image: var(--texture);
 }
 
+/* A step down from --bg, for sections that need to separate from their
+   neighbours without going dark. The page ground was identical on every
+   section, so only the cards varied and the whole page read flat. */
+.band-subtle {
+  background: var(--bg-subtle);
+}
+
+/* Cards need to stay distinct from a subtle band, so they take the brightest
+   surface rather than the one that now matches the ground. */
+.band-subtle .pillar,
+.band-subtle .card,
+.band-subtle .fcard,
+.band-subtle .cap,
+.band-subtle .news-card,
+.band-subtle .svc,
+.band-subtle .stats .s,
+.band-subtle .badge,
+.band-subtle .kit .k-item {
+  background: var(--n-0);
+}
+
 /* ---------- buttons ---------- */
 
 .btn {

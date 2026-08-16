@@ -199,7 +199,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec sec-tight">
+      <section className="sec sec-tight band-subtle">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head ctr reveal">
@@ -259,7 +259,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="sec sec-tight">
+      <section className="sec sec-tight on-dark depth textured">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
