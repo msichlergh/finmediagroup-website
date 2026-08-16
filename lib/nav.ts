@@ -1,4 +1,5 @@
 export const NAV_LINKS = [
+  { href: '/', label: 'Home' },
   { href: '/network', label: 'Network' },
   { href: '/awards', label: 'Awards' },
   { href: '/expos', label: 'Expos' },

@@ -47,7 +47,7 @@ export default function Page() {
               </div>
             </div>
             <div className="s">
-              <CountUp to={40} suffix="K+" />
+              <CountUp to={150} suffix="K+" />
               <div className="kk">
                 High-Intent Monthly Visitors
               </div>
@@ -225,7 +225,7 @@ export default function Page() {
                 We&apos;re building and preparing new properties across the finance and trading space — joining the network as they go live.
               </p>
               <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
-                Partner with us
+                Partner With Us
               </Link>
             </div>
             <div className="card reveal" style={{ justifyContent: "center", alignItems: "flex-start", background: "var(--bg-subtle)" }}>
@@ -241,7 +241,7 @@ export default function Page() {
                 We launch and acquire properties where independent media can genuinely serve an audience.
               </p>
               <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
-                Pitch a partnership
+                Pitch a Partnership
               </Link>
             </div>
           </div>

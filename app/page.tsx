@@ -32,7 +32,7 @@ export default function Page() {
               <Mark />
             </div>
             <span className="eyebrow">
-              Media &amp; Services Group · Finance &amp; Trading
+              Media &amp; Authority Network · Finance &amp; Trading
             </span>
 
             <h1>
@@ -70,7 +70,7 @@ export default function Page() {
                 <div className="kk">Partnerships</div>
               </div>
               <div className="s">
-                <CountUp to={40} suffix="K+" />
+                <CountUp to={150} suffix="K+" />
                 <div className="kk">Visitors / Mo</div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function Page() {
                 Independent reviews, news, and PR across prop trading, brokerage, and forex — launched and grown in-house, with new media joining the network.
               </p>
               <span className="go">
-                See the network
+                See the Network
               </span>
             </Link>
             <Link className="cap reveal" href="/awards">
@@ -121,7 +121,7 @@ export default function Page() {
                 Industry awards and certifications credible enough that winners feature them on their booths, sites, and campaigns. Recognition that&apos;s earned, not bought.
               </p>
               <span className="go">
-                Explore awards
+                Explore Awards
               </span>
             </Link>
             <Link className="cap reveal" href="/expos">
@@ -135,7 +135,7 @@ export default function Page() {
                 We stage the expos, ceremonies, and gatherings that bring traders, firms, and partners face to face — the in-person layer of the network.
               </p>
               <span className="go">
-                See events
+                See Events
               </span>
             </Link>
             <Link className="cap reveal" href="/ventures">
@@ -149,7 +149,7 @@ export default function Page() {
                 Go-to-market and growth advisory for finance companies — and venture building, where we launch and back new businesses in the space.
               </p>
               <span className="go">
-                Advisory & ventures
+                Advisory & Ventures
               </span>
             </Link>
           </div>
@@ -377,7 +377,7 @@ export default function Page() {
                 We launch and acquire properties where independent media can genuinely serve an audience.
               </p>
               <Link href="/contact" style={{ marginTop: "18px", fontSize: "13px", fontWeight: "600", borderBottom: "1px solid var(--border-strong)", paddingBottom: "3px" }}>
-                Pitch a partnership
+                Pitch a Partnership
               </Link>
             </div>
           </div>
