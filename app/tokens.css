@@ -154,6 +154,8 @@
      over a vertical fall-off. Subtle enough to read as material, not as a
      gradient someone applied. */
   --depth-bg: var(--n-50);
+  --depth-surface: var(--n-0);
+  --depth-surface-2: var(--n-50);
   --depth: radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.9), transparent 62%),
     linear-gradient(180deg, var(--n-0) 0%, var(--n-50) 100%);
   --edge-highlight: rgba(255, 255, 255, 0.9);
@@ -227,6 +229,11 @@
      sitting near the content, wrong here, where it reads as grey rather than
      black. So these values are deliberately neutral and off-ramp. */
   --depth-bg: #040404;
+  /* Cards on a depth band have to be neutral too. --surface (#1a1a21) is on
+     the ramp and carries its blue-violet cast, which reads wrong against a
+     neutral black ground. */
+  --depth-surface: #101010;
+  --depth-surface-2: #1a1a1a;
   --depth: radial-gradient(120% 85% at 50% 0%, rgba(255, 255, 255, 0.04), transparent 58%),
     linear-gradient(180deg, #0e0e0e 0%, #000000 100%);
   --edge-highlight: rgba(255, 255, 255, 0.06);
