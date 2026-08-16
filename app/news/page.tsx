@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Mark } from '@/components/Mark'
+import { ARTICLES } from '@/lib/news'
 
 export const metadata: Metadata = {
   title: "Press & News",
@@ -30,133 +31,33 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "40px" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="news-grid">
-            <Link className="news-card feature reveal" href="/news/finmedia-launch">
-              <div className="thumb">
-                <Mark />
-              </div>
-              <div className="nc-body">
-                <div className="nc-meta">
-                  <span className="tagpill">
-                    Announcement
-                  </span>
-                  <span>
-                    Feb 2026
-                  </span>
+            {ARTICLES.map((a) => (
+              <Link
+                key={a.slug}
+                className={`news-card reveal${a.feature ? ' feature' : ''}`}
+                href={`/news/${a.slug}`}
+              >
+                <div className="thumb">
+                  <Mark />
                 </div>
-                <h3>
-                  FinPR evolves into FinMedia Group
-                </h3>
-                <p>
-                  FinPR officially transitions into FinMedia Group — a finance and trading media and authority network focused on owned audiences and performance media.
-                </p>
-                <span className="rd">
-                  Read more
-                </span>
-              </div>
-            </Link>
-            <a className="news-card reveal" href="#">
-              <div className="thumb">
-                <Mark />
-              </div>
-              <div className="nc-body">
-                <div className="nc-meta">
-                  <span className="tagpill">
-                    Partnership
-                  </span>
-                  <span>
-                    2026
-                  </span>
+                <div className="nc-body">
+                  <div className="nc-meta">
+                    <span className="tagpill">{a.tag}</span>
+                    <time dateTime={a.published}>{a.date}</time>
+                  </div>
+                  <h3>{a.title}</h3>
+                  <p>{a.excerpt}</p>
+                  <span className="rd">Read more</span>
                 </div>
-                <h3>
-                  Funded Trading named official media partner of the London Prop Trading Expo
-                </h3>
-                <p>
-                  Our flagship brand joins one of the industry&apos;s biggest events as an official media partner.
-                </p>
-                <span className="rd">
-                  Read more
-                </span>
-              </div>
-            </a>
-            <a className="news-card reveal" href="#">
-              <div className="thumb">
-                <Mark />
-              </div>
-              <div className="nc-body">
-                <div className="nc-meta">
-                  <span className="tagpill">
-                    Network
-                  </span>
-                  <span>
-                    2026
-                  </span>
-                </div>
-                <h3>
-                  Awards displayed by leading prop firms
-                </h3>
-                <p>
-                  Major firms feature awards from our brands front and centre on their expo booths and campaigns.
-                </p>
-                <span className="rd">
-                  Read more
-                </span>
-              </div>
-            </a>
-            <a className="news-card reveal" href="#">
-              <div className="thumb">
-                <Mark />
-              </div>
-              <div className="nc-body">
-                <div className="nc-meta">
-                  <span className="tagpill">
-                    Milestone
-                  </span>
-                  <span>
-                    2026
-                  </span>
-                </div>
-                <h3>
-                  700+ brands now listed across the network
-                </h3>
-                <p>
-                  A milestone for the directory as the network&apos;s reach across the industry continues to grow.
-                </p>
-                <span className="rd">
-                  Read more
-                </span>
-              </div>
-            </a>
-            <a className="news-card reveal" href="#">
-              <div className="thumb">
-                <Mark />
-              </div>
-              <div className="nc-body">
-                <div className="nc-meta">
-                  <span className="tagpill">
-                    Upcoming
-                  </span>
-                  <span>
-                    2026
-                  </span>
-                </div>
-                <h3>
-                  New media properties in development
-                </h3>
-                <p>
-                  FinMedia Group is preparing the next wave of properties to join the network across the finance and trading space.
-                </p>
-                <span className="rd">
-                  Read more
-                </span>
-              </div>
-            </a>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head reveal">
@@ -204,9 +105,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta reveal">
+          <div className="cta on-dark depth textured reveal">
             <span className="eyebrow ctr">
               Stay In The Loop
             </span>

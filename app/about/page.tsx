@@ -75,7 +75,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "50px" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -96,7 +96,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 FinPR FinMedia Group
               </div>
@@ -114,7 +114,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head ctr reveal">
@@ -213,7 +213,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head ctr reveal">
             <span className="eyebrow ctr">
@@ -272,7 +272,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -293,7 +293,7 @@ export default function Page() {
               </Link>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Singapore HQ · Global Reach
               </div>
@@ -311,9 +311,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta reveal">
+          <div className="cta on-dark depth textured reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">

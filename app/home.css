@@ -18,11 +18,9 @@
 .hero-card {
   position: relative;
   overflow: hidden;
-  background: var(--hero-wash);
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-9) var(--space-8);
+  padding: var(--space-7) var(--space-8) var(--space-6);
 }
 
 .hero-note {
@@ -32,13 +30,36 @@
   margin-top: var(--space-5);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: var(--space-7);
-  align-items: center;
-  position: relative;
-  z-index: 1;
+/* Solid monogram on the right of the card. Sized to sit clear of the rule
+   above the figures, and dropped entirely once the copy needs the width. */
+.hero-mark {
+  position: absolute;
+  right: var(--space-8);
+  top: var(--space-7);
+  width: clamp(170px, 21vw, 290px);
+  color: var(--text);
+  pointer-events: none;
+  opacity: 0;
+  animation: fadein 1s .55s forwards;
+}
+
+.hero-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+/* Stacked: headline above, copy below. The two-column version left dead
+   space on both diagonals. */
+.hero h1 {
+  max-width: 16ch;
+  margin: var(--space-4) 0 0;
+}
+
+.hero p.lead {
+  max-width: 58ch;
+  margin: var(--space-4) 0 0;
 }
 
 /* Figures sit in the card with the copy — no card chrome of their own. */
@@ -46,9 +67,11 @@
   /* four equal columns so the figures line up rather than wrapping
      unevenly at the width of the copy column */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
   opacity: 0;
   animation: rise .8s .74s forwards;
 }
@@ -99,7 +122,7 @@
 }
 
 .hero .cta-row {
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
@@ -117,7 +140,7 @@
 .hub {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 420px;
   /* sits lower than the headline, level with the copy and figures */
   margin: var(--space-8) 0 0;
   justify-self: end;
@@ -279,8 +302,14 @@
 
 /* ---------- compact homepage rhythm ---------- */
 
-.home .sec { padding: var(--space-9) 0 }
-.home .sec-sm { padding: var(--space-8) 0 }
+.home .sec { padding: var(--space-8) 0 }
+.home .sec-sm { padding: var(--space-7) 0 }
+/* has to out-specify .home .sec above */
+.home .sec-tight { padding-top: var(--space-6) }
+
+@media (max-width: 1080px) {
+  .hero-mark { display: none }
+}
 
 @media (max-width: 980px) {
   .hero {

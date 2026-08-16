@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -235,6 +235,19 @@ nav.links a.active {
   flex-shrink: 0;
 }
 
+/* A dark island paints its own ground, so the page motif and the ambient
+   glow behind it flip too — both key off tokens. */
+.on-dark {
+  border-color: var(--border);
+}
+
+/* Diagonal pinstripe. Opt-in per section, like .on-dark — on the whole page
+   ground it is wallpaper; on a band or two it separates them from the flow.
+   Works on either ground: --texture flips with the surrounding tokens. */
+.textured {
+  background-image: var(--texture);
+}
+
 /* ---------- buttons ---------- */
 
 .btn {
@@ -347,7 +360,7 @@ nav.links a.active {
 .page-hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + var(--space-9)) 0 var(--space-8);
+  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
   overflow: hidden;
 }
 
@@ -356,7 +369,7 @@ nav.links a.active {
 }
 
 .page-hero h1 {
-  font-size: var(--text-display);
+  font-size: var(--text-display-sm);
   margin-top: var(--space-5);
   max-width: 18ch;
 }
@@ -370,7 +383,7 @@ nav.links a.active {
 }
 
 .page-hero .cta-row {
-  margin-top: var(--space-7);
+  margin-top: var(--space-5);
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
@@ -382,11 +395,18 @@ section {
 }
 
 .sec {
-  padding: var(--space-10) 0;
+  padding: var(--space-9) 0;
 }
 
 .sec-sm {
-  padding: var(--space-9) 0;
+  padding: var(--space-8) 0;
+}
+
+/* Sections that used to carry an inline padding-top from the legacy markup.
+   Zero meant the eyebrow badge sat flush against the section edge with no
+   room to breathe; this keeps consecutive sections tight without crowding. */
+.sec-tight {
+  padding-top: var(--space-6);
 }
 
 .sec-head {
@@ -461,7 +481,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
 }
 
 .pillar {
@@ -510,7 +530,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .card {
@@ -588,7 +608,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .fcard {
@@ -808,7 +828,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .news-card {
@@ -1063,7 +1083,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .svc {
@@ -1113,11 +1133,11 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .cap {
-  padding: var(--space-7);
+  padding: var(--space-6);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1134,7 +1154,7 @@ section {
 .cap h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: var(--text-h2);
+  font-size: var(--text-h3-lg);
   line-height: var(--leading-heading);
   margin-top: var(--space-2);
 }
@@ -1149,7 +1169,7 @@ section {
 .cap .go {
   display: inline-flex;
   gap: var(--space-2);
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text);
@@ -1200,7 +1220,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .badge {
@@ -1267,15 +1287,21 @@ section {
   overflow: hidden;
 }
 
+/* The sprite symbol is square. Without an explicit height the <svg> takes the
+   UA default and crops the mark, which is why it read small and clipped. */
+.big-mark {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
 .split .panel-visual .big-mark {
   position: absolute;
-  right: -40px;
-  bottom: -50px;
-  width: 300px;
+  right: -34px;
+  top: var(--space-4);
+  bottom: auto;
+  width: 380px;
   color: var(--text);
   opacity: var(--watermark-opacity);
-  transition: transform .2s linear;
-  will-change: transform;
 }
 
 .split .panel-visual .vlabel,
@@ -1345,7 +1371,7 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--r-2xl);
   box-shadow: var(--shadow-md);
-  padding: var(--space-9) var(--space-8);
+  padding: var(--space-8);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1353,6 +1379,7 @@ section {
 
 .cta h2 {
   font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
   max-width: 20ch;
   margin: var(--space-4) auto 0;
 }
@@ -1376,7 +1403,7 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
+  width: 420px;
   color: var(--text);
   opacity: var(--watermark-opacity);
 }
@@ -1442,17 +1469,35 @@ section {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: var(--space-9) 0 var(--space-7);
+  padding: var(--space-8) 0 var(--space-5);
   position: relative;
   z-index: 1;
   background: var(--bg-subtle);
-  margin-top: var(--space-9);
+  /* the preceding section already carries its own bottom padding — stacking a
+     margin on top of it left a dead band between the CTA and the footer */
+  margin-top: 0;
 }
+
 
 .foot-top {
   display: grid;
   grid-template-columns: 1.7fr 1fr 1fr 1fr;
   gap: var(--space-7);
+}
+
+/* .brand is sized for the nav pill; the footer lockup has room to breathe
+   and should carry more weight as the sign-off. */
+.foot-brand .brand .mark {
+  width: 38px;
+  height: 38px;
+}
+
+.foot-brand .brand .wordmark b {
+  font-size: 23px;
+}
+
+.foot-brand .brand .wordmark span {
+  font-size: 10px;
 }
 
 .foot-brand p {
@@ -1462,17 +1507,20 @@ footer {
   max-width: 36ch;
 }
 
+/* The heading is a label; the links are what people came for. It was both
+   dimmer *and* smaller than the links under it, which read backwards — it now
+   leads on size and lets the links lead on contrast. */
 .foot-col h4 {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: var(--text-xs);
-  color: var(--text-faint);
+  font-weight: 500;
+  font-size: var(--text-body);
+  color: var(--text-label);
   margin-bottom: var(--space-4);
 }
 
 .foot-col a {
   display: block;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: var(--text-sm);
   padding: var(--space-1) 0;
   transition: color .2s ease;
@@ -1486,21 +1534,27 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   padding-top: var(--space-5);
   border-top: 1px solid var(--border);
   color: var(--text-faint);
-  font-size: var(--text-sm);
+  /* ~15% down from --text-sm; this row is a sign-off, not content */
+  font-size: var(--text-xs);
   flex-wrap: wrap;
   gap: var(--space-4);
 }
 
-.foot-bottom .socials {
+.foot-bottom .legal {
   display: flex;
   gap: var(--space-5);
+  flex-wrap: wrap;
 }
 
-.foot-bottom .socials a:hover {
+.foot-bottom .legal a {
+  transition: color .2s ease;
+}
+
+.foot-bottom .legal a:hover {
   color: var(--text);
 }
 
@@ -1566,8 +1620,22 @@ footer {
   .wrap {
     padding: 0 var(--space-5);
   }
+  /* .wrap drops to --space-5 of padding here, so the bar has to follow or it
+     sits narrower than the content it is supposed to line up with. */
+  header {
+    top: var(--space-2);
+  }
+  header .nav {
+    width: calc(100% - var(--space-5) * 2);
+    padding-left: var(--space-3);
+  }
+  .mobile-menu {
+    top: calc(var(--header-h) - var(--space-2));
+    left: var(--space-5);
+    right: var(--space-5);
+  }
   .page-hero {
-    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-7);
+    padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-6);
   }
   .pillars,
   .pf-grid,
@@ -1621,68 +1689,6 @@ footer {
   }
 }
 
-/* ============================================================
-   theme toggle
-   ============================================================ */
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  border-radius: var(--r-md);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--text);
-  border-color: var(--border-strong);
-}
-
-.theme-toggle-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
-}
-
-.theme-toggle-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Show the icon for the theme you would switch *to*. */
-.theme-toggle-icon[data-icon='moon'] {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-.theme-toggle-icon[data-icon='sun'] {
-  opacity: 0;
-  transform: rotate(-90deg) scale(.6);
-}
-
-[data-theme='dark'] .theme-toggle-icon[data-icon='moon'] {
-  opacity: 0;
-  transform: rotate(90deg) scale(.6);
-}
-
-[data-theme='dark'] .theme-toggle-icon[data-icon='sun'] {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
 
 /* ============================================================
    third-party brand logos
@@ -1699,12 +1705,51 @@ footer {
   display: block;
 }
 
-/* dark mark: fine on light, needs flipping on dark */
-[data-theme='dark'] .brand-logo[data-ink='dark'] {
+/* light mark on the light page: knock it to solid ink so it reads */
+.brand-logo[data-ink='light'] {
+  filter: brightness(0);
+}
+
+/* ...and inside a dark island the correction flips */
+.on-dark .brand-logo[data-ink='light'] {
+  filter: none;
+}
+
+.on-dark .brand-logo[data-ink='dark'] {
   filter: brightness(0) invert(1);
 }
 
-/* light mark: fine on dark, needs flipping on light */
-[data-theme='light'] .brand-logo[data-ink='light'] {
-  filter: brightness(0);
+/* ============================================================
+   .depth — the premium band treatment
+
+   Darker, neutral ground with light catching the top edge and falling
+   away toward the bottom, texture laid over it. The inset hairline is
+   what sells it: it reads as a lit lip rather than a border.
+
+   Defined here, after the component rules, so it overrides whatever
+   background the component sets for itself.
+   ============================================================ */
+
+.depth {
+  background-color: var(--depth-bg);
+  background-image: var(--depth);
+  box-shadow: inset 0 1px 0 var(--edge-highlight);
+}
+
+/* Composes with .textured — the pinstripe sits over the depth gradient. */
+.depth.textured {
+  background-image: var(--texture), var(--depth);
+}
+
+/* The hero card keeps its lift off the page as well as the inset lip. */
+.hero-card.depth {
+  box-shadow: inset 0 1px 0 var(--edge-highlight), var(--shadow-md);
+}
+
+footer.depth {
+  border-top-color: transparent;
+}
+
+.cta.depth {
+  border-color: transparent;
 }

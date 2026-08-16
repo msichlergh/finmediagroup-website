@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
 import { CountUp } from '@/components/CountUp'
-import { HubGraphic } from '@/components/HubGraphic'
 import { Mark } from '@/components/Mark'
 
 export const metadata: Metadata = {
@@ -20,57 +19,60 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="home">
-      {/* Hero is one contained card: copy and figures on the left, the network
-          diagram on the right sitting lower than the headline so it balances
-          against the stats row. */}
+      {/* Hero is one contained card, stacked: eyebrow, headline, copy, actions,
+          then the figures beneath a rule. components/HubGraphic.tsx is kept if
+          the network diagram earns a place lower down the page. */}
       <section className="hero">
         <div className="wrap">
-          <div className="hero-card">
+          <div className="hero-card depth">
             <div className="glow-top" />
-            <div className="hero-grid">
-              <div className="hero-text">
-                <span className="eyebrow">
-                  Media &amp; Services Group · Finance &amp; Trading
-                </span>
-                <h1>
-                  <span className="l">Be Relevant.</span>
-                  <span className="l">Be Present.</span>
-                </h1>
-                <p className="lead">
-                  FinMedia Group launches, grows, and amplifies the financial media brands the
-                  industry trusts. Four core properties today and more on the way — leading YouTube
-                  channels, the awards firms display, and the events where the industry meets, built
-                  by a team recognised across the space.
-                </p>
-                <div className="cta-row">
-                  <Link className="btn btn-primary" href="/network">
-                    Explore the Network
-                  </Link>
-                  <Link className="btn btn-ghost" href="/contact">
-                    Work With Us
-                  </Link>
-                </div>
+            {/* The monogram holds the right of the card now the diagram is out —
+                solid, not a watermark. */}
+            <div className="hero-mark" aria-hidden="true">
+              <Mark />
+            </div>
+            <span className="eyebrow">
+              Media &amp; Services Group · Finance &amp; Trading
+            </span>
 
-                <div className="hero-stats">
-                  <div className="s">
-                    <CountUp to={700} suffix="+" />
-                    <div className="kk">Brands Listed</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={50} suffix="K+" />
-                    <div className="kk">Email Subscribers</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={50} suffix="+" />
-                    <div className="kk">Partnerships</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={40} suffix="K+" />
-                    <div className="kk">Visitors / Mo</div>
-                  </div>
-                </div>
+            <h1>
+              <span className="l">Be Relevant.</span>
+              <span className="l">Be Present.</span>
+            </h1>
+
+            <p className="lead">
+              FinMedia Group launches, grows, and amplifies the financial media brands the industry
+              trusts. Four core properties today and more on the way — leading YouTube channels, the
+              awards firms display, and the events where the industry meets, built by a team
+              recognised across the space.
+            </p>
+
+            <div className="cta-row">
+              <Link className="btn btn-primary" href="/network">
+                Explore the Network
+              </Link>
+              <Link className="btn btn-ghost" href="/contact">
+                Work With Us
+              </Link>
+            </div>
+
+            <div className="hero-stats">
+              <div className="s">
+                <CountUp to={700} suffix="+" />
+                <div className="kk">Brands Listed</div>
               </div>
-              <HubGraphic />
+              <div className="s">
+                <CountUp to={50} suffix="K+" />
+                <div className="kk">Email Subscribers</div>
+              </div>
+              <div className="s">
+                <CountUp to={50} suffix="+" />
+                <div className="kk">Partnerships</div>
+              </div>
+              <div className="s">
+                <CountUp to={40} suffix="K+" />
+                <div className="kk">Visitors / Mo</div>
+              </div>
             </div>
           </div>
           <p className="hero-note">
@@ -153,7 +155,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -168,13 +170,13 @@ export default function Page() {
               <p style={{ color: "var(--text-muted)", marginTop: "20px" }}>
                 <b style={{ fontWeight: "600" }}>
                   Be Relevant.
-                </b>
+                </b>{' '}
                 Independent reviews, an expert team, and awards the industry respects — the credibility that makes audiences listen and firms want to be associated with us.
               </p>
               <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
                 <b style={{ fontWeight: "600" }}>
                   Be Present.
-                </b>
+                </b>{' '}
                 A growing network of brands, leading YouTube channels, newsletters, and a seat at the industry&apos;s biggest events — so you show up everywhere your audience already looks.
               </p>
               <p style={{ color: "var(--text-muted)", marginTop: "14px" }}>
@@ -182,7 +184,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 The brand promise
               </div>
@@ -200,7 +202,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head ctr reveal">
@@ -260,7 +262,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="sec-head reveal">
             <span className="eyebrow">
@@ -272,11 +274,6 @@ export default function Page() {
           </div>
           <div className="pf-grid">
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Prop Trading
-                </span>
-              </div>
               <h3>
                 Funded Trading
               </h3>
@@ -302,11 +299,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Reviews
-                </span>
-              </div>
               <h3>
                 My Trading Reviews
               </h3>
@@ -329,11 +321,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  Forex News
-                </span>
-              </div>
               <h3>
                 Daily FX Wire
               </h3>
@@ -356,11 +343,6 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
-              <div className="top">
-                <span className="cat">
-                  PR & Authority
-                </span>
-              </div>
               <h3>
                 FinPR
               </h3>
@@ -401,9 +383,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta reveal">
+          <div className="cta on-dark depth textured reveal">
             <div className="glow-top" style={{ borderRadius: "var(--r-lg)" }} />
             <BigMark />
             <span className="eyebrow ctr">

@@ -39,9 +39,20 @@ export const FOOTER_COLUMNS = [
   },
 ] as const
 
-/** Placeholders in the legacy markup — swap for the real profiles. */
+/**
+ * Placeholders in the legacy markup — every one pointed at "#". Kept here
+ * rather than deleted so they can go back in the footer, or into a social
+ * row, once the real profile URLs exist.
+ */
 export const SOCIAL_LINKS = [
   { href: '#', label: 'YouTube' },
   { href: '#', label: 'X' },
   { href: '#', label: 'LinkedIn' },
+] as const
+
+/** Footer sign-off row. */
+export const LEGAL_LINKS = [
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms of Service' },
+  { href: '/cookies', label: 'Cookie Policy' },
 ] as const

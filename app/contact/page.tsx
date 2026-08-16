@@ -30,7 +30,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "30px" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split" style={{ alignItems: "start" }}>
             <div className="reveal">
@@ -40,7 +40,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal" style={{ minHeight: "auto", gap: "28px" }}>
-              <BigMark parallax />
+              <BigMark />
               <div>
                 <div className="vlabel">
                   Direct

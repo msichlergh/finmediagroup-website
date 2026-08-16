@@ -23,7 +23,9 @@ export default function Page() {
             Advisory & Ventures
           </span>
           <h1>
-            We don&apos;t just advise. We build.
+            We don&apos;t just advise.
+            <br />
+            We build.
           </h1>
           <p className="lead">
             We&apos;ve launched and scaled media brands, awards, and platforms across finance and trading. We bring that operating experience to companies in the space — as advisors, and as builders backing new ventures.
@@ -38,7 +40,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" id="advisory" style={{ paddingTop: "70px" }}>
+      <section className="sec" id="advisory">
         <div className="wrap">
           <div className="glow-top" />
           <div className="sec-head reveal">
@@ -100,7 +102,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
           <div className="split">
             <div className="reveal">
@@ -118,7 +120,7 @@ export default function Page() {
               </p>
             </div>
             <div className="panel-visual reveal">
-              <BigMark parallax />
+              <BigMark />
               <div className="vlabel">
                 Launch · Operate · Scale
               </div>
@@ -136,9 +138,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="sec" style={{ paddingTop: "0" }}>
+      <section className="sec sec-tight">
         <div className="wrap">
-          <div className="cta reveal">
+          <div className="cta on-dark depth textured reveal">
             <span className="eyebrow ctr">
               Partner With Us
             </span>

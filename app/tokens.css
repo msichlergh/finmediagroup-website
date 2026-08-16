@@ -13,10 +13,11 @@
    --panel:#101012). That is why it could not be themed: light mode would
    have needed --white to be black. Hence this rewrite.
 
-   Palette derived from the Sevora reference. Light is the default; dark
-   is the same ramp inverted on #121218 rather than pure black, which is
-   softer and keeps FinMedia's identity as a real theme, not an inversion
-   artefact.
+   Palette derived from the Sevora reference. The site is light — there is
+   no theme toggle. Dark is an *emphasis* tool: drop .on-dark on any
+   subtree and every semantic token below it inverts. Used sparingly it
+   gives the page rhythm; used everywhere it would stop drawing the eye,
+   which is why it is a section treatment and not a mode.
    ============================================================ */
 
 :root {
@@ -26,6 +27,7 @@
   --n-50:  #edeef1;
   --n-100: #e4e6ea;
   --n-200: #c9cdd2;
+  --n-300: #aeb1b8;
   --n-400: #94979e;
   --n-450: #64676e; /* lightest step that still clears 4.5:1 on --bg (5.15:1) */
   --n-500: #61646b;
@@ -63,8 +65,12 @@
      Instrument Sans at the same tracking. Sizes fluid between the
      mobile and desktop values. */
   --text-display: clamp(40px, 6vw, 72px);
+  /* Interior page heroes sit a step below the homepage statement — 15% down. */
+  --text-display-sm: clamp(34px, 5.1vw, 61px);
   --text-h2: clamp(28px, 3.6vw, 36px);
   --text-h3: clamp(20px, 2vw, 24px);
+  /* card titles on the wider 2-up grids, between h2 and h3 */
+  --text-h3-lg: clamp(21px, 2.2vw, 26px);
   --text-lead: clamp(16px, 1.4vw, 18px);
   --text-body: 16px;
   --text-sm: 14px;
@@ -88,8 +94,7 @@
 /* ============================================================
    LIGHT — the default
    ============================================================ */
-:root,
-[data-theme='light'] {
+:root {
   color-scheme: light;
 
   --bg: var(--n-25);
@@ -105,6 +110,8 @@
      (dividers, watermarks); anything carrying words uses this darker step. */
   --text-faint: var(--n-450);
   --text-inverse: var(--n-0);
+  /* Section labels — quieter than body text, but still a heading. */
+  --text-label: var(--n-500);
 
   --border: var(--n-100);
   --border-strong: var(--n-200);
@@ -117,7 +124,9 @@
   /* translucent tints for hovers and sheens */
   --tint-1: rgba(18, 18, 24, 0.03);
   --tint-2: rgba(18, 18, 24, 0.06);
-  --overlay: rgba(255, 255, 255, 0.72);
+  /* the scrolled nav sits over live content — near-opaque so headings do not
+     read through it. backdrop-filter is a bonus, not the thing doing the work. */
+  --overlay: rgba(255, 255, 255, 0.94);
 
   /* Light needs real shadows to separate surfaces; dark does not. */
   --shadow-sm: 0 1px 2px rgba(18, 18, 24, 0.05);
@@ -125,9 +134,27 @@
   --shadow-lg: 0 12px 40px rgba(18, 18, 24, 0.10), 0 2px 8px rgba(18, 18, 24, 0.04);
   --shadow-pill: 0 2px 12px rgba(18, 18, 24, 0.08), 0 0 0 1px rgba(18, 18, 24, 0.04);
 
+  /* Fine diagonal pinstripe, per the reference. Kept just above the
+     threshold of visibility — it should register as paper texture, not
+     as a pattern you can count. */
+  --texture-line: rgba(18, 18, 24, 0.024);
+  --texture: repeating-linear-gradient(
+    -45deg,
+    transparent 0 4px,
+    var(--texture-line) 4px 5px
+  );
+
   /* ambient light behind the hero */
-  --glow: radial-gradient(90% 60% at 50% -10%, rgba(18, 18, 24, 0.05), transparent 60%);
+  --glow: radial-gradient(90% 60% at 50% -10%, rgba(18, 18, 24, 0.028), transparent 62%);
   --hero-wash: linear-gradient(160deg, var(--n-50), var(--n-0) 55%, var(--n-25));
+
+  /* Depth treatment for large bands: a wash of light catching the top edge
+     over a vertical fall-off. Subtle enough to read as material, not as a
+     gradient someone applied. */
+  --depth-bg: var(--n-50);
+  --depth: radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.9), transparent 62%),
+    linear-gradient(180deg, var(--n-0) 0%, var(--n-50) 100%);
+  --edge-highlight: rgba(255, 255, 255, 0.9);
 
   /* the layered rounded-rect corner motif */
   --motif-stroke: rgba(18, 18, 24, 0.07);
@@ -138,14 +165,18 @@
 
   /* third-party brand logos sit on a light ground: show them as-is */
   --logo-filter: none;
-  --logo-blend: normal;
 }
 
 /* ============================================================
-   DARK — the same ramp inverted
+   .on-dark — an inverted island on the light page
+
+   Put it on any element and everything inside picks up the dark values.
+   The element paints its own background so it reads as a distinct band.
    ============================================================ */
-[data-theme='dark'] {
+.on-dark {
   color-scheme: dark;
+  background: var(--bg);
+  color: var(--text);
 
   --bg: var(--n-950);
   --bg-subtle: #0e0e13;
@@ -158,6 +189,7 @@
   --text-muted: var(--n-400);
   --text-faint: var(--n-200);
   --text-inverse: var(--n-950);
+  --text-label: var(--n-300);
 
   --border: rgba(255, 255, 255, 0.09);
   --border-strong: rgba(255, 255, 255, 0.18);
@@ -169,7 +201,7 @@
 
   --tint-1: rgba(255, 255, 255, 0.04);
   --tint-2: rgba(255, 255, 255, 0.07);
-  --overlay: rgba(18, 18, 24, 0.72);
+  --overlay: rgba(18, 18, 24, 0.94);
 
   /* Shadows read as murk on a dark ground — lean on borders and a
      faint lift instead. */
@@ -178,8 +210,24 @@
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
   --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
 
+  --texture-line: rgba(255, 255, 255, 0.028);
+  --texture: repeating-linear-gradient(
+    -45deg,
+    transparent 0 4px,
+    var(--texture-line) 4px 5px
+  );
+
   --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
   --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
+
+  /* The deepest band on the site, and the only place that goes to true black.
+     The neutral ramp carries a slight blue-violet cast — right for surfaces
+     sitting near the content, wrong here, where it reads as grey rather than
+     black. So these values are deliberately neutral and off-ramp. */
+  --depth-bg: #040404;
+  --depth: radial-gradient(120% 85% at 50% 0%, rgba(255, 255, 255, 0.04), transparent 58%),
+    linear-gradient(180deg, #0e0e0e 0%, #000000 100%);
+  --edge-highlight: rgba(255, 255, 255, 0.06);
 
   --motif-stroke: rgba(255, 255, 255, 0.08);
   --motif-opacity: 0.85;
@@ -189,50 +237,4 @@
   /* knocked-out logos need inverting to read on a dark ground.
      Replaced with proper per-brand assets — see components/BrandLogo.tsx. */
   --logo-filter: brightness(0) invert(1);
-  --logo-blend: normal;
-}
-
-/* Honour the OS preference until the visitor picks a theme explicitly.
-   ThemeScript writes data-theme on <html> before first paint, so this
-   only applies on the very first render. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    color-scheme: dark;
-
-    --bg: var(--n-950);
-    --bg-subtle: #0e0e13;
-    --surface: var(--n-850);
-    --surface-2: var(--n-900);
-    --surface-inverse: var(--n-0);
-
-    --text: var(--n-25);
-    --text-secondary: var(--n-200);
-    --text-muted: var(--n-400);
-    --text-faint: var(--n-200);
-    --text-inverse: var(--n-950);
-
-    --border: rgba(255, 255, 255, 0.09);
-    --border-strong: rgba(255, 255, 255, 0.18);
-
-    --accent: var(--n-0);
-    --accent-hover: rgba(255, 255, 255, 0.88);
-    --accent-fg: var(--n-950);
-
-    --tint-1: rgba(255, 255, 255, 0.04);
-    --tint-2: rgba(255, 255, 255, 0.07);
-    --overlay: rgba(18, 18, 24, 0.72);
-
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
-    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
-    --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
-
-    --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
-    --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
-
-    --motif-stroke: rgba(255, 255, 255, 0.08);
-    --motif-opacity: 0.85;
-    --watermark-opacity: 0.06;
-    --logo-filter: brightness(0) invert(1);
-  }
 }
