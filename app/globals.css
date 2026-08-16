@@ -1354,16 +1354,35 @@ section {
   border-top: 1px solid var(--border);
 }
 
+/* Hover used to animate padding-left, which narrows the row and reflows the
+   copy onto an extra line. Feedback now comes from a tint and a left rule,
+   neither of which touches layout. */
 .list-rows .row {
+  position: relative;
   display: flex;
   gap: var(--space-4);
   padding: var(--space-5) var(--space-1);
   border-bottom: 1px solid var(--border);
-  transition: padding-left .3s ease, background-color .3s ease;
+  transition: background-color .3s ease;
+}
+
+.list-rows .row::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-1) * -1);
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  background: var(--text);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.list-rows .row:hover::before {
+  opacity: 1;
 }
 
 .list-rows .row:hover {
-  padding-left: var(--space-3);
   background: var(--tint-1);
 }
 
