@@ -97,7 +97,7 @@ export default function Page() {
                 One platform became several. Several became a network. In 2026, FinPR formally evolved into FinMedia Group — shifting from promotion to presence, and from chasing the industry narrative to building the destinations that drive it.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 FinPR FinMedia Group
@@ -289,7 +289,7 @@ export default function Page() {
                 Join the Team
               </Link>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Singapore HQ · Global Reach

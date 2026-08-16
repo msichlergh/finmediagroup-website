@@ -119,7 +119,7 @@ export default function Page() {
                 It&apos;s how our own network was built, and how we partner with founders who want a builder, not just a backer.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Launch · Operate · Scale

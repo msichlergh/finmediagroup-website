@@ -123,7 +123,7 @@ export default function Page() {
                 </span>
               </div>
               <h3>
-                My Trading Reviews
+                MyTradingReviews
               </h3>
               <div className="url">
                 mytradingreviews.com

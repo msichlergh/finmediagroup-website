@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
 import { CountUp } from '@/components/CountUp'
 import { Mark } from '@/components/Mark'
+import { PullQuote } from '@/components/PullQuote'
 
 export const metadata: Metadata = {
   title: {absolute: "FinMedia Group — Be Relevant. Be Present."},
@@ -24,17 +25,13 @@ export default function Page() {
           the network diagram earns a place lower down the page. */}
       <section className="hero">
         <div className="wrap">
-          <div className="hero-card depth">
+          <div className="hero-card on-dark depth">
             <div className="glow-top" />
             {/* The monogram holds the right of the card now the diagram is out —
                 solid, not a watermark. */}
             <div className="hero-mark" aria-hidden="true">
               <Mark />
             </div>
-            <span className="eyebrow">
-              Media &amp; Authority Network · Finance &amp; Trading
-            </span>
-
             <h1>
               <span className="l">Be Relevant.</span>
               <span className="l">Be Present.</span>
@@ -183,7 +180,7 @@ export default function Page() {
                 Most can offer one. We&apos;re built to deliver both — and that&apos;s what compounds.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 The brand promise
@@ -300,7 +297,7 @@ export default function Page() {
             </Link>
             <Link className="card reveal" href="/network">
               <h3>
-                My Trading Reviews
+                MyTradingReviews
               </h3>
               <div className="url">
                 mytradingreviews.com
@@ -383,6 +380,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <PullQuote />
       <section className="sec sec-tight">
         <div className="wrap">
           <div className="cta on-dark depth textured reveal">

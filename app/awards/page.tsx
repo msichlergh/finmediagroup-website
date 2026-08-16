@@ -4,11 +4,11 @@ import { BigMark } from '@/components/BigMark'
 
 export const metadata: Metadata = {
   title: "Awards & Recognition",
-  description: "Funded Trading Awards and My Trading Reviews Awards — recognition credible enough that winners display it on booths, sites, and campaigns.",
+  description: "Funded Trading Awards and MyTradingReviews Awards — recognition credible enough that winners display it on booths, sites, and campaigns.",
   alternates: { canonical: "/awards" },
   openGraph: {
     title: "Awards & Recognition — FinMedia Group",
-    description: "Funded Trading Awards and My Trading Reviews Awards — recognition credible enough that winners display it on booths, sites, and campaigns.",
+    description: "Funded Trading Awards and MyTradingReviews Awards — recognition credible enough that winners display it on booths, sites, and campaigns.",
     url: "/awards",
   },
 }
@@ -70,7 +70,7 @@ export default function Page() {
                 Winners feature our badges on booths, homepages, and campaigns because the recognition converts — and because it comes from brands the industry already trusts.
               </p>
             </div>
-            <div className="panel-visual reveal">
+            <div className="panel-visual on-dark depth reveal">
               <BigMark />
               <div className="vlabel">
                 Seen on booths & campaigns
@@ -120,7 +120,7 @@ export default function Page() {
                 Live · mytradingreviews.com
               </div>
               <h3>
-                My Trading Reviews Awards
+                MyTradingReviews Awards
               </h3>
               <p>
                 Recognising excellence across brokers, platforms, and trading services — the awards that help traders identify who&apos;s genuinely worth trusting in a crowded market.

@@ -123,7 +123,7 @@ export const ARTICLES: Article[] = [
       "A milestone for the directory as the network's reach across the industry continues to grow.",
     lead: "The network's directories now carry more than 700 listed brands — a milestone that says as much about the industry's appetite for independent assessment as it does about the network.",
     body: [
-      { type: 'p', text: 'More than 700 brands are now listed across the FinMedia Group network — prop firms, brokers, platforms, courses, and trading systems, catalogued and assessed across Funded Trading and My Trading Reviews.' },
+      { type: 'p', text: 'More than 700 brands are now listed across the FinMedia Group network — prop firms, brokers, platforms, courses, and trading systems, catalogued and assessed across Funded Trading and MyTradingReviews.' },
       { type: 'h2', text: 'Why the number matters' },
       { type: 'p', text: 'A directory is only useful if it is close to complete. Traders comparing funded programmes or brokers are trying to answer a narrow question — who is worth trusting — and a listing that covers most of the market is far more valuable than one covering a curated slice of it.' },
       { type: 'p', text: 'Coverage at this scale also changes the network’s position. It stops being a publisher with opinions and becomes the reference point the industry checks itself against.' },

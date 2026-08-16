@@ -39,7 +39,7 @@ export default function Page() {
                 This form is a front-end demo. Wire it to your email or CRM to go live.
               </p>
             </div>
-            <div className="panel-visual reveal" style={{ minHeight: "auto", gap: "28px" }}>
+            <div className="panel-visual on-dark depth reveal" style={{ minHeight: "auto", gap: "28px" }}>
               <BigMark />
               <div>
                 <div className="vlabel">

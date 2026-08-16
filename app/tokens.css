@@ -210,7 +210,7 @@
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
   --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
 
-  --texture-line: rgba(255, 255, 255, 0.028);
+  --texture-line: rgba(255, 255, 255, 0.013);
   --texture: repeating-linear-gradient(
     -45deg,
     transparent 0 4px,
