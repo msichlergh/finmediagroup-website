@@ -13,10 +13,11 @@
    --panel:#101012). That is why it could not be themed: light mode would
    have needed --white to be black. Hence this rewrite.
 
-   Palette derived from the Sevora reference. Light is the default; dark
-   is the same ramp inverted on #121218 rather than pure black, which is
-   softer and keeps FinMedia's identity as a real theme, not an inversion
-   artefact.
+   Palette derived from the Sevora reference. The site is light — there is
+   no theme toggle. Dark is an *emphasis* tool: drop .on-dark on any
+   subtree and every semantic token below it inverts. Used sparingly it
+   gives the page rhythm; used everywhere it would stop drawing the eye,
+   which is why it is a section treatment and not a mode.
    ============================================================ */
 
 :root {
@@ -88,8 +89,7 @@
 /* ============================================================
    LIGHT — the default
    ============================================================ */
-:root,
-[data-theme='light'] {
+:root {
   color-scheme: light;
 
   --bg: var(--n-25);
@@ -138,14 +138,18 @@
 
   /* third-party brand logos sit on a light ground: show them as-is */
   --logo-filter: none;
-  --logo-blend: normal;
 }
 
 /* ============================================================
-   DARK — the same ramp inverted
+   .on-dark — an inverted island on the light page
+
+   Put it on any element and everything inside picks up the dark values.
+   The element paints its own background so it reads as a distinct band.
    ============================================================ */
-[data-theme='dark'] {
+.on-dark {
   color-scheme: dark;
+  background: var(--bg);
+  color: var(--text);
 
   --bg: var(--n-950);
   --bg-subtle: #0e0e13;
@@ -189,50 +193,4 @@
   /* knocked-out logos need inverting to read on a dark ground.
      Replaced with proper per-brand assets — see components/BrandLogo.tsx. */
   --logo-filter: brightness(0) invert(1);
-  --logo-blend: normal;
-}
-
-/* Honour the OS preference until the visitor picks a theme explicitly.
-   ThemeScript writes data-theme on <html> before first paint, so this
-   only applies on the very first render. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    color-scheme: dark;
-
-    --bg: var(--n-950);
-    --bg-subtle: #0e0e13;
-    --surface: var(--n-850);
-    --surface-2: var(--n-900);
-    --surface-inverse: var(--n-0);
-
-    --text: var(--n-25);
-    --text-secondary: var(--n-200);
-    --text-muted: var(--n-400);
-    --text-faint: var(--n-200);
-    --text-inverse: var(--n-950);
-
-    --border: rgba(255, 255, 255, 0.09);
-    --border-strong: rgba(255, 255, 255, 0.18);
-
-    --accent: var(--n-0);
-    --accent-hover: rgba(255, 255, 255, 0.88);
-    --accent-fg: var(--n-950);
-
-    --tint-1: rgba(255, 255, 255, 0.04);
-    --tint-2: rgba(255, 255, 255, 0.07);
-    --overlay: rgba(18, 18, 24, 0.72);
-
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
-    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
-    --shadow-pill: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
-
-    --glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%);
-    --hero-wash: linear-gradient(160deg, var(--n-900), var(--n-850) 55%, var(--n-950));
-
-    --motif-stroke: rgba(255, 255, 255, 0.08);
-    --motif-opacity: 0.85;
-    --watermark-opacity: 0.06;
-    --logo-filter: brightness(0) invert(1);
-  }
 }

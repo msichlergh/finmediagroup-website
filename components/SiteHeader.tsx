@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Mark } from './Mark'
-import { ThemeToggle } from './ThemeToggle'
 import { NAV_LINKS } from '@/lib/nav'
 
 export function SiteHeader() {
@@ -51,7 +50,6 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="nav-actions">
-            <ThemeToggle />
             <Link className="btn btn-primary" href="/contact">
               Get in Touch
             </Link>

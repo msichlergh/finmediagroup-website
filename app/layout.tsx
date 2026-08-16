@@ -6,7 +6,6 @@ import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Sprite } from '@/components/Sprite'
 import { SITE_URL } from '@/lib/site'
-import { THEME_INIT_SCRIPT } from '@/lib/theme'
 
 import './tokens.css'
 import './globals.css'
@@ -56,25 +55,14 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  // matches --bg in each theme, so the browser chrome does not clash
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f7f7f8' },
-    { media: '(prefers-color-scheme: dark)', color: '#121218' },
-  ],
+  // the site is light-only; dark is a section treatment, not a mode
+  themeColor: '#f7f7f8',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // suppressHydrationWarning: THEME_INIT_SCRIPT sets data-theme before React
-    // hydrates, so the server and client markup differ on this attribute by design.
-    <html
-      lang="en"
-      className={`${lora.variable} ${instrumentSans.variable}`}
-      suppressHydrationWarning
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
-      </head>
+    <html lang="en" className={`${lora.variable} ${instrumentSans.variable}`}>
       <body>
         <BrandCorner />
         <Sprite />

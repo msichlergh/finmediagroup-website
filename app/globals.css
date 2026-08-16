@@ -235,6 +235,12 @@ nav.links a.active {
   flex-shrink: 0;
 }
 
+/* A dark island paints its own ground, so the page motif and the ambient
+   glow behind it have to flip too — both already key off tokens. */
+.on-dark {
+  border-color: var(--border);
+}
+
 /* ---------- buttons ---------- */
 
 .btn {
@@ -1621,68 +1627,6 @@ footer {
   }
 }
 
-/* ============================================================
-   theme toggle
-   ============================================================ */
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  border-radius: var(--r-md);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--text);
-  border-color: var(--border-strong);
-}
-
-.theme-toggle-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
-}
-
-.theme-toggle-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Show the icon for the theme you would switch *to*. */
-.theme-toggle-icon[data-icon='moon'] {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-.theme-toggle-icon[data-icon='sun'] {
-  opacity: 0;
-  transform: rotate(-90deg) scale(.6);
-}
-
-[data-theme='dark'] .theme-toggle-icon[data-icon='moon'] {
-  opacity: 0;
-  transform: rotate(90deg) scale(.6);
-}
-
-[data-theme='dark'] .theme-toggle-icon[data-icon='sun'] {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
 
 /* ============================================================
    third-party brand logos
@@ -1699,12 +1643,16 @@ footer {
   display: block;
 }
 
-/* dark mark: fine on light, needs flipping on dark */
-[data-theme='dark'] .brand-logo[data-ink='dark'] {
-  filter: brightness(0) invert(1);
+/* light mark on the light page: knock it to solid ink so it reads */
+.brand-logo[data-ink='light'] {
+  filter: brightness(0);
 }
 
-/* light mark: fine on dark, needs flipping on light */
-[data-theme='light'] .brand-logo[data-ink='light'] {
-  filter: brightness(0);
+/* ...and inside a dark island the correction flips */
+.on-dark .brand-logo[data-ink='light'] {
+  filter: none;
+}
+
+.on-dark .brand-logo[data-ink='dark'] {
+  filter: brightness(0) invert(1);
 }

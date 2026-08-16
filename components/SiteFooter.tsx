@@ -4,7 +4,7 @@ import { FOOTER_COLUMNS, SOCIAL_LINKS } from '@/lib/nav'
 
 export function SiteFooter() {
   return (
-    <footer>
+    <footer className="on-dark">
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">

@@ -123,7 +123,7 @@ export default function Page() {
       </section>
       <section className="sec" style={{ paddingTop: "0" }}>
         <div className="wrap">
-          <div className="cta reveal">
+          <div className="cta on-dark reveal">
             <span className="eyebrow ctr">
               Be Relevant. Be Present.
             </span>
