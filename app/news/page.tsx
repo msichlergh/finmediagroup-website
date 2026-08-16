@@ -50,7 +50,7 @@ export default function Page() {
                   </div>
                   <h3>{a.title}</h3>
                   <p>{a.excerpt}</p>
-                  <span className="rd">Read more</span>
+                  <span className="rd">Read More</span>
                 </div>
               </Link>
             ))}

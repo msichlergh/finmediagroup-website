@@ -35,7 +35,9 @@
 .hero-mark {
   position: absolute;
   right: var(--space-8);
-  top: var(--space-7);
+  /* sits lower than the eyebrow so it centres against the copy block rather
+     than hanging from the top edge of the card */
+  top: var(--space-9);
   width: clamp(170px, 21vw, 290px);
   color: var(--text);
   pointer-events: none;
