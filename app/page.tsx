@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
+import { BrandTile } from '@/components/BrandLogo'
 import { CountUp } from '@/components/CountUp'
 import { Mark } from '@/components/Mark'
 import { PullQuote } from '@/components/PullQuote'
@@ -270,6 +271,7 @@ export default function Page() {
           </div>
           <div className="pf-grid">
             <Link className="card reveal" href="/network">
+              <BrandTile brand="funded-trading" />
               <h3>
                 Funded Trading
               </h3>
@@ -295,6 +297,7 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
+              <BrandTile brand="my-trading-reviews" />
               <h3>
                 MyTradingReviews
               </h3>
@@ -317,6 +320,7 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
+              <BrandTile brand="daily-fx-wire" />
               <h3>
                 Daily FX Wire
               </h3>
@@ -339,6 +343,7 @@ export default function Page() {
               </div>
             </Link>
             <Link className="card reveal" href="/network">
+              <BrandTile brand="finpr" />
               <h3>
                 FinPR
               </h3>

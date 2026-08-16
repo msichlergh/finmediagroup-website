@@ -1752,6 +1752,21 @@ footer {
   display: block;
 }
 
+/* Square tile for a brand mark, sitting above the name on a network card. */
+.brand-tile {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--r-md);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  flex-shrink: 0;
+}
+
 /* light mark on the light page: knock it to solid ink so it reads */
 .brand-logo[data-ink='light'] {
   filter: brightness(0);

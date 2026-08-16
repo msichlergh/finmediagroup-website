@@ -64,8 +64,9 @@ export const BRAND_LOGOS: Record<BrandKey, BrandLogoSpec> = {
   },
 }
 
-export function BrandLogo({ brand }: { brand: BrandKey }) {
-  const { src, name, ink, width } = BRAND_LOGOS[brand]
+export function BrandLogo({ brand, width }: { brand: BrandKey; width?: number }) {
+  const { src, name, ink, width: specWidth } = BRAND_LOGOS[brand]
+  const w = width ?? specWidth
   return (
     // eslint-disable-next-line @next/next/no-img-element -- third-party origins we do not control
     <img
@@ -73,7 +74,22 @@ export function BrandLogo({ brand }: { brand: BrandKey }) {
       data-ink={ink}
       src={src}
       alt={name}
-      style={{ width: `${width}px` }}
+      style={{ width: `${w}px` }}
     />
+  )
+}
+
+/**
+ * Square tile holding a brand mark.
+ *
+ * Three of the four sources are wordmarks rather than square icon marks, so
+ * they sit thin inside a square. A proper icon-only lockup per brand is what
+ * this wants — see the note at the top of this file.
+ */
+export function BrandTile({ brand }: { brand: BrandKey }) {
+  return (
+    <span className="brand-tile" aria-hidden="true">
+      <BrandLogo brand={brand} width={34} />
+    </span>
   )
 }
