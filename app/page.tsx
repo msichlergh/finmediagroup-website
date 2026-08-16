@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
 import { CountUp } from '@/components/CountUp'
-import { HubGraphic } from '@/components/HubGraphic'
 import { Mark } from '@/components/Mark'
 
 export const metadata: Metadata = {
@@ -20,57 +19,55 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="home">
-      {/* Hero is one contained card: copy and figures on the left, the network
-          diagram on the right sitting lower than the headline so it balances
-          against the stats row. */}
+      {/* Hero is one contained card, stacked: eyebrow, headline, copy, actions,
+          then the figures beneath a rule. components/HubGraphic.tsx is kept if
+          the network diagram earns a place lower down the page. */}
       <section className="hero">
         <div className="wrap">
           <div className="hero-card">
             <div className="glow-top" />
-            <div className="hero-grid">
-              <div className="hero-text">
-                <span className="eyebrow">
-                  Media &amp; Services Group · Finance &amp; Trading
-                </span>
-                <h1>
-                  <span className="l">Be Relevant.</span>
-                  <span className="l">Be Present.</span>
-                </h1>
-                <p className="lead">
-                  FinMedia Group launches, grows, and amplifies the financial media brands the
-                  industry trusts. Four core properties today and more on the way — leading YouTube
-                  channels, the awards firms display, and the events where the industry meets, built
-                  by a team recognised across the space.
-                </p>
-                <div className="cta-row">
-                  <Link className="btn btn-primary" href="/network">
-                    Explore the Network
-                  </Link>
-                  <Link className="btn btn-ghost" href="/contact">
-                    Work With Us
-                  </Link>
-                </div>
+            <span className="eyebrow">
+              Media &amp; Services Group · Finance &amp; Trading
+            </span>
 
-                <div className="hero-stats">
-                  <div className="s">
-                    <CountUp to={700} suffix="+" />
-                    <div className="kk">Brands Listed</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={50} suffix="K+" />
-                    <div className="kk">Email Subscribers</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={50} suffix="+" />
-                    <div className="kk">Partnerships</div>
-                  </div>
-                  <div className="s">
-                    <CountUp to={40} suffix="K+" />
-                    <div className="kk">Visitors / Mo</div>
-                  </div>
-                </div>
+            <h1>
+              <span className="l">Be Relevant.</span>
+              <span className="l">Be Present.</span>
+            </h1>
+
+            <p className="lead">
+              FinMedia Group launches, grows, and amplifies the financial media brands the industry
+              trusts. Four core properties today and more on the way — leading YouTube channels, the
+              awards firms display, and the events where the industry meets, built by a team
+              recognised across the space.
+            </p>
+
+            <div className="cta-row">
+              <Link className="btn btn-primary" href="/network">
+                Explore the Network
+              </Link>
+              <Link className="btn btn-ghost" href="/contact">
+                Work With Us
+              </Link>
+            </div>
+
+            <div className="hero-stats">
+              <div className="s">
+                <CountUp to={700} suffix="+" />
+                <div className="kk">Brands Listed</div>
               </div>
-              <HubGraphic />
+              <div className="s">
+                <CountUp to={50} suffix="K+" />
+                <div className="kk">Email Subscribers</div>
+              </div>
+              <div className="s">
+                <CountUp to={50} suffix="+" />
+                <div className="kk">Partnerships</div>
+              </div>
+              <div className="s">
+                <CountUp to={40} suffix="K+" />
+                <div className="kk">Visitors / Mo</div>
+              </div>
             </div>
           </div>
           <p className="hero-note">

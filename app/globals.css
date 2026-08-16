@@ -360,7 +360,7 @@ nav.links a.active {
 .page-hero {
   position: relative;
   z-index: 1;
-  padding: calc(var(--header-h) + var(--space-9)) 0 var(--space-8);
+  padding: calc(var(--header-h) + var(--space-7)) 0 var(--space-7);
   overflow: hidden;
 }
 
@@ -395,18 +395,18 @@ section {
 }
 
 .sec {
-  padding: var(--space-10) 0;
+  padding: var(--space-9) 0;
 }
 
 .sec-sm {
-  padding: var(--space-9) 0;
+  padding: var(--space-8) 0;
 }
 
 /* Sections that used to carry an inline padding-top from the legacy markup.
    Zero meant the eyebrow badge sat flush against the section edge with no
    room to breathe; this keeps consecutive sections tight without crowding. */
 .sec-tight {
-  padding-top: var(--space-7);
+  padding-top: var(--space-6);
 }
 
 .sec-head {
@@ -481,7 +481,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .pillar {
@@ -530,7 +530,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .card {
@@ -608,7 +608,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .fcard {
@@ -828,7 +828,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .news-card {
@@ -1083,7 +1083,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .svc {
@@ -1133,11 +1133,11 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .cap {
-  padding: var(--space-7);
+  padding: var(--space-6);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1169,7 +1169,7 @@ section {
 .cap .go {
   display: inline-flex;
   gap: var(--space-2);
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text);
@@ -1220,7 +1220,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .badge {
@@ -1371,6 +1371,7 @@ section {
 
 .cta h2 {
   font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
   max-width: 20ch;
   margin: var(--space-4) auto 0;
 }
@@ -1464,7 +1465,9 @@ footer {
   position: relative;
   z-index: 1;
   background: var(--bg-subtle);
-  margin-top: var(--space-9);
+  /* the preceding section already carries its own bottom padding — stacking a
+     margin on top of it left a dead band between the CTA and the footer */
+  margin-top: 0;
 }
 
 

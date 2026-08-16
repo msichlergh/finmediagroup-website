@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { ARTICLES } from '@/lib/news'
 import { SITE_URL } from '@/lib/site'
 
 const ROUTES = [
@@ -12,14 +13,22 @@ const ROUTES = [
   { path: '/about', priority: 0.7 },
   { path: '/careers', priority: 0.6 },
   { path: '/news', priority: 0.7 },
-  { path: '/news/finmedia-launch', priority: 0.5 },
   { path: '/contact', priority: 0.7 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ROUTES.map(({ path, priority }) => ({
-    url: `${SITE_URL}${path}`,
-    priority,
-    changeFrequency: 'monthly',
-  }))
+  return [
+    ...ROUTES.map(({ path, priority }) => ({
+      url: `${SITE_URL}${path}`,
+      priority,
+      changeFrequency: 'monthly' as const,
+    })),
+    // articles come from the same source the pages render from
+    ...ARTICLES.map((a) => ({
+      url: `${SITE_URL}/news/${a.slug}`,
+      lastModified: a.published,
+      priority: 0.5,
+      changeFrequency: 'yearly' as const,
+    })),
+  ]
 }
