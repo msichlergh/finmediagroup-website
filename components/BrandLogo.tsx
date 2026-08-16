@@ -39,7 +39,7 @@ export const BRAND_LOGOS: Record<BrandKey, BrandLogoSpec> = {
     width: 58,
   },
   'my-trading-reviews': {
-    name: 'My Trading Reviews',
+    name: 'MyTradingReviews',
     href: 'https://www.mytradingreviews.com',
     // A favicon with an opaque dark background baked into the pixels. No
     // filter fixes that — it renders as a dark tile on the light theme until

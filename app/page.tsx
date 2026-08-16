@@ -32,10 +32,6 @@ export default function Page() {
             <div className="hero-mark" aria-hidden="true">
               <Mark />
             </div>
-            <span className="eyebrow">
-              Media &amp; Authority Network · Finance &amp; Trading
-            </span>
-
             <h1>
               <span className="l">Be Relevant.</span>
               <span className="l">Be Present.</span>
@@ -301,7 +297,7 @@ export default function Page() {
             </Link>
             <Link className="card reveal" href="/network">
               <h3>
-                My Trading Reviews
+                MyTradingReviews
               </h3>
               <div className="url">
                 mytradingreviews.com

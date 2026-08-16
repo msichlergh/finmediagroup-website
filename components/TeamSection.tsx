@@ -1,13 +1,23 @@
+import Image from 'next/image'
 import { Mark } from './Mark'
 import { LEADERSHIP, type TeamMember } from '@/lib/team'
 
+/** Rendered size of each avatar, so next/image can pick a sensible source. */
+const AVATAR_PX = { sm: 46, md: 76 } as const
+
 /** Headshot, or the monogram until one is supplied. */
 function Avatar({ member, size = 'md' }: { member: TeamMember; size?: 'sm' | 'md' }) {
+  const px = AVATAR_PX[size]
   return (
     <div className={`avatar avatar-${size}`}>
       {member.photo ? (
-        // eslint-disable-next-line @next/next/no-img-element -- headshots are plain static files
-        <img src={member.photo} alt={member.name} />
+        <Image
+          src={member.photo}
+          alt={member.name}
+          width={px * 2}
+          height={px * 2}
+          sizes={`${px}px`}
+        />
       ) : (
         <Mark />
       )}

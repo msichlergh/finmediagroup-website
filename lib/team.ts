@@ -25,6 +25,7 @@ export const LEADERSHIP: TeamMember[] = [
   {
     name: 'Karol Cempa',
     role: 'Chief Executive Officer',
+    photo: '/team/karol-cempa.jpg',
     // paraphrased from the launch announcement; nothing added
     bio: 'Moved from CEO of FinPR to lead FinMedia Group, carrying the strategic expertise and industry relationships built over years in fintech PR into the network.',
   },
