@@ -18,11 +18,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/index', destination: '/', permanent: true },
-      { source: '/news-finmedia-launch', destination: '/insights/finmedia-launch', permanent: true },
-      { source: '/news-finmedia-launch.html', destination: '/insights/finmedia-launch', permanent: true },
-      // the section was called News before it became Insights
-      { source: '/news', destination: '/insights', permanent: true },
-      { source: '/news/:slug', destination: '/insights/:slug', permanent: true },
+      { source: '/news-finmedia-launch', destination: '/news/finmedia-launch', permanent: true },
+      { source: '/news-finmedia-launch.html', destination: '/news/finmedia-launch', permanent: true },
       { source: '/:slug.html', destination: '/:slug', permanent: true },
     ]
   },

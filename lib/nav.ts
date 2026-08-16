@@ -8,7 +8,7 @@ export const NAV_LINKS = [
   { href: '/investors', label: 'Investors' },
   { href: '/about', label: 'About' },
   { href: '/careers', label: 'Careers' },
-  { href: '/insights', label: 'Insights' },
+  { href: '/news', label: 'News' },
 ] as const
 
 export const FOOTER_COLUMNS = [
@@ -34,7 +34,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { href: '/about', label: 'About' },
       { href: '/careers', label: 'Careers' },
-      { href: '/insights', label: 'Insights' },
+      { href: '/news', label: 'Press & News' },
       { href: '/contact', label: 'Contact' },
     ],
   },
