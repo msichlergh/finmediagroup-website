@@ -1,40 +1,27 @@
-import { BRAND_LOGOS, BrandLogo, type BrandKey } from './BrandLogo'
+import { PARTNERS, type Partner } from '@/lib/partners'
 
 /**
- * Continuous logo strip.
+ * Continuous partner/client logo strip.
  *
- * ---------------------------------------------------------------------------
- * Seeded with the network's own brands, because those are the only marks we
- * actually have. A "companies we work with" wall needs their logos and, in most
- * cases, their permission — and the site currently says partners are
- * "available on request" rather than naming them, so a public logo wall would
- * contradict that.
- *
- * To switch it to partners: add their marks to BRAND_LOGOS (or a parallel
- * PARTNER_LOGOS map) and pass them as `brands`. Nothing else changes.
- * ---------------------------------------------------------------------------
+ * Renders nothing while lib/partners.ts is empty — an empty logo wall says
+ * less than no logo wall, and the alternative (filling it with FinMedia's own
+ * brands) would present portfolio properties as clients.
  *
  * The track is rendered twice and translated by half its width, which gives a
- * seamless loop with no JS. The copy is aria-hidden so a screen reader hears
- * the list once.
+ * seamless loop with no JS. The second copy is aria-hidden and untabbable, so
+ * the list is announced and traversed once.
  */
-
-const DEFAULT_BRANDS: BrandKey[] = [
-  'funded-trading',
-  'my-trading-reviews',
-  'finpr',
-  'daily-fx-wire',
-]
-
 export function LogoMarquee({
-  label = 'The properties behind the network',
-  brands = DEFAULT_BRANDS,
+  label = 'Trusted by the firms and platforms we work with',
+  partners = PARTNERS,
 }: {
   label?: string
-  brands?: BrandKey[]
+  partners?: Partner[]
 }) {
-  // repeat until the track is long enough that the loop is not obviously short
-  const run = brands.length < 6 ? [...brands, ...brands, ...brands] : brands
+  if (partners.length === 0) return null
+
+  // repeat short lists so the loop is not obviously a handful of items
+  const run = partners.length < 6 ? [...partners, ...partners, ...partners] : partners
 
   return (
     <section className="sec-sm logo-strip band-subtle">
@@ -46,18 +33,33 @@ export function LogoMarquee({
         <div className="marquee-track">
           {[0, 1].map((copy) => (
             <ul key={copy} className="marquee-run" aria-hidden={copy === 1 || undefined}>
-              {run.map((brand, i) => (
-                <li key={`${brand}-${i}`}>
-                  <a
-                    href={BRAND_LOGOS[brand].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    tabIndex={copy === 1 ? -1 : undefined}
-                  >
-                    <BrandLogo brand={brand} fit />
-                  </a>
-                </li>
-              ))}
+              {run.map((partner, i) => {
+                const mark = (
+                  // eslint-disable-next-line @next/next/no-img-element -- third-party marks, sized by CSS
+                  <img
+                    className="brand-logo"
+                    data-ink={partner.ink ?? 'colour'}
+                    src={partner.logo}
+                    alt={partner.name}
+                  />
+                )
+                return (
+                  <li key={`${partner.name}-${i}`}>
+                    {partner.href ? (
+                      <a
+                        href={partner.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabIndex={copy === 1 ? -1 : undefined}
+                      >
+                        {mark}
+                      </a>
+                    ) : (
+                      <span>{mark}</span>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           ))}
         </div>
