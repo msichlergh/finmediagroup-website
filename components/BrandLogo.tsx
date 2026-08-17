@@ -64,7 +64,17 @@ export const BRAND_LOGOS: Record<BrandKey, BrandLogoSpec> = {
   },
 }
 
-export function BrandLogo({ brand, width }: { brand: BrandKey; width?: number }) {
+export function BrandLogo({
+  brand,
+  width,
+  fit,
+}: {
+  brand: BrandKey
+  width?: number
+  /** skip the inline width so CSS can size it — used by the logo strip, where
+      marks are normalised on height rather than width */
+  fit?: boolean
+}) {
   const { src, name, ink, width: specWidth } = BRAND_LOGOS[brand]
   const w = width ?? specWidth
   return (
@@ -74,7 +84,7 @@ export function BrandLogo({ brand, width }: { brand: BrandKey; width?: number })
       data-ink={ink}
       src={src}
       alt={name}
-      style={{ width: `${w}px` }}
+      style={fit ? undefined : { width: `${w}px` }}
     />
   )
 }

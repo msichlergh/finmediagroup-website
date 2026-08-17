@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { BigMark } from '@/components/BigMark'
 import { BrandTile } from '@/components/BrandLogo'
 import { CountUp } from '@/components/CountUp'
+import { LogoMarquee } from '@/components/LogoMarquee'
 import { Mark } from '@/components/Mark'
 import { PullQuote } from '@/components/PullQuote'
 
@@ -78,6 +79,7 @@ export default function Page() {
           </p>
         </div>
       </section>
+      <LogoMarquee />
       <section className="sec" id="caps">
         <div className="glow-top" />
         <div className="wrap">
