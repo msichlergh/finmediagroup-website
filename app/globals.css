@@ -269,6 +269,15 @@ nav.links a.active::after {
   background-image: var(--texture);
 }
 
+/* A band owns its top and bottom edges, so it needs more room inside them
+   than a section that simply shares the page ground. Compound selectors so
+   this outweighs `.home .sec-tight`, which is two classes. */
+section.depth.sec,
+section.band-subtle.sec {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
 /* A step down from --bg, for sections that need to separate from their
    neighbours without going dark. The page ground was identical on every
    section, so only the cards varied and the whole page read flat. */
